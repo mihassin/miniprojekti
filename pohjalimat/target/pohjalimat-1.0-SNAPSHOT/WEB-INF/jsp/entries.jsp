@@ -8,5 +8,7 @@
     </head>
     <body>
         <h1>Entries</h1>
+        
+         <a href="${pageContext.request.contextPath}/app/entry">Create new Entry</a><br/>
     </body>
 </html>
