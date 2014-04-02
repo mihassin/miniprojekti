@@ -2,6 +2,7 @@
 
 package wad.pohjalimat.io;
 
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -9,19 +10,21 @@ import java.util.Scanner;
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
  */
 public class ConsoleIO implements IO {
+    Scanner in;
 
     ConsoleIO(Scanner scanner) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.in = scanner;
     }
 
     @Override
     public String read(String label) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(label);
+        return in.nextLine();
     }
 
     @Override
     public void write(String data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(data);
     }
 
 
