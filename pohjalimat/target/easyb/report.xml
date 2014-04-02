@@ -1,0 +1,13 @@
+<easyb time='Wed Apr 02 21:30:04 EEST 2014' totalbehaviors='1' totalfailedbehaviors='0' totalpendingbehaviors='1' executionTime='1214'>
+  <stories scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='1214'>
+    <story name='viitteen_lisays_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='1214'>
+      <description name='Käyttäjänä pystyn lisäämään Inproceedings-tyyppisen viitteen selkokielellä' />
+      <scenario name='käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla' result='pending' executionTime='70'>
+        <given name='komento addentry valittu' result='success' />
+        <when name='oikean muotoiset viitteen tiedot syötetään' result='success' />
+        <then name='viite on tallessa ohjelman tietämässä paikassa' result='pending' />
+      </scenario>
+    </story>
+  </stories>
+  <specifications specifications='0' failedspecifications='0' pendingspecifications='0' executionTime='0' />
+</easyb>
