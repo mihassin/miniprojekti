@@ -12,13 +12,13 @@ import java.util.Scanner;
 public class ConsoleIO implements IO {
     Scanner in;
 
-    ConsoleIO(Scanner scanner) {
+    public ConsoleIO(Scanner scanner) {
         this.in = scanner;
     }
 
     @Override
     public String read(String label) {
-        System.out.println(label);
+        System.out.print(label);
         return in.nextLine();
     }
 
