@@ -13,7 +13,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import wad.pohjalimat.model.Inproceedings;
 
 /**
  *
@@ -31,7 +30,7 @@ public class ConsoleIOTest {
         scanner = new Scanner("cmd1\ncmd2");
         io = new ConsoleIO(scanner);
     }
-
+    
     @Test
     public void readReturnsCorrectString() {
         assertEquals("cmd1",io.read(""));
@@ -60,5 +59,9 @@ public class ConsoleIOTest {
 //        }
 //        return result;
 //    }
+
+
+
+
 
 }
