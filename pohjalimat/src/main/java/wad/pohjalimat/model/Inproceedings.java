@@ -20,12 +20,24 @@ public class Inproceedings implements Model {
         this.booktitle = booktitle;
         this.year = year;
     }
-    
+
     @Override
-    public void printHumanReadable() {
-        System.out.println("*** " + title + " ***" + "\n" +
-                           "Author: " + author + "\n" +
-                           "Book title: " + booktitle + "\n" +
-                           "Year published: " + year + "\n");
+    public String getAuthor() {
+        return author;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public String getBooktitle() {
+        return booktitle;
+    }
+
+    @Override
+    public int getYear() {
+        return year;
     }
 }

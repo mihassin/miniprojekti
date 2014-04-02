@@ -6,5 +6,8 @@ package wad.pohjalimat.model;
  */
 public interface Model {
     
-    void printHumanReadable();
+    String getAuthor();
+    String getTitle();
+    String getBooktitle();
+    int getYear();
 }

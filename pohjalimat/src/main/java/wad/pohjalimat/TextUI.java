@@ -2,11 +2,12 @@
 
 package wad.pohjalimat;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import wad.pohjalimat.io.ConsoleIO;
 import wad.pohjalimat.io.IO;
 import wad.pohjalimat.model.Inproceedings;
-import wad.pohjalimat.model.ReferenceList;
+import wad.pohjalimat.model.Model;
 
 /**
  *
@@ -14,11 +15,11 @@ import wad.pohjalimat.model.ReferenceList;
  */
 public class TextUI {
     IO io;
-    ReferenceList refList;
+    ArrayList<Model> refList;
     
     public TextUI() {
         io = new ConsoleIO(new Scanner(System.in));
-        refList = new ReferenceList();
+        refList = new ArrayList<Model>();
     }
 
     public void start() {
@@ -37,7 +38,9 @@ public class TextUI {
                 io.read("booktitle: "),
                 Integer.parseInt(io.read("year: "))));
         } else if (command.equals("print")) {
-            refList.printHumanReadable();
+            for (Model model : refList) {
+                io.printHumanReadableModel(model);
+            }
         }
         
         if (!command.equals("exit")) {
