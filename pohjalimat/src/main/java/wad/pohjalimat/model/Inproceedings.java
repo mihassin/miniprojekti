@@ -36,4 +36,39 @@ public class Inproceedings {
     public int getYear() {
         return year;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 37 * hash + (this.author != null ? this.author.hashCode() : 0);
+        hash = 37 * hash + (this.title != null ? this.title.hashCode() : 0);
+        hash = 37 * hash + (this.booktitle != null ? this.booktitle.hashCode() : 0);
+        hash = 37 * hash + this.year;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Inproceedings other = (Inproceedings) obj;
+        if ((this.author == null) ? (other.author != null) : !this.author.equals(other.author)) {
+            return false;
+        }
+        if ((this.title == null) ? (other.title != null) : !this.title.equals(other.title)) {
+            return false;
+        }
+        if ((this.booktitle == null) ? (other.booktitle != null) : !this.booktitle.equals(other.booktitle)) {
+            return false;
+        }
+        if (this.year != other.year) {
+            return false;
+        }
+        return true;
+    }
+    
 }
