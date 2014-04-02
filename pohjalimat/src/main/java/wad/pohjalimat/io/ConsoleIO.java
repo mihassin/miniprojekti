@@ -4,7 +4,7 @@ package wad.pohjalimat.io;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
-import wad.pohjalimat.model.Model;
+import wad.pohjalimat.model.Inproceedings;
 
 /**
  *
@@ -29,11 +29,11 @@ public class ConsoleIO implements IO {
     }
 
     @Override
-    public void printHumanReadableModel(Model model) {
-        System.out.println("*** " + model.getTitle() + " ***" + "\n" +
-                           "Author: " + model.getAuthor() + "\n" +
-                           "Book title: " + model.getBooktitle() + "\n" +
-                           "Year published: " + model.getYear() + "\n");
+    public void printHumanReadableInproceedings(Inproceedings inproceedings) {
+        System.out.println("*** " + inproceedings.getTitle() + " ***" + "\n" +
+                           "Author: " + inproceedings.getAuthor() + "\n" +
+                           "Book title: " + inproceedings.getBooktitle() + "\n" +
+                           "Year published: " + inproceedings.getYear() + "\n");
     }
 
 

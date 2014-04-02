@@ -1,7 +1,8 @@
 
 package wad.pohjalimat.io;
 
-import wad.pohjalimat.model.Model;
+import wad.pohjalimat.model.Inproceedings;
+
 
 /**
  *
@@ -10,5 +11,5 @@ import wad.pohjalimat.model.Model;
 public interface IO {
     public String read(String label);
     public void write(String data);
-    public void printHumanReadableModel(Model model);
+    public void printHumanReadableInproceedings(Inproceedings inproceedings);
 }

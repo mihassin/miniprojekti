@@ -7,7 +7,6 @@ import java.util.Scanner;
 import wad.pohjalimat.io.ConsoleIO;
 import wad.pohjalimat.io.IO;
 import wad.pohjalimat.model.Inproceedings;
-import wad.pohjalimat.model.Model;
 
 /**
  *
@@ -15,11 +14,11 @@ import wad.pohjalimat.model.Model;
  */
 public class TextUI {
     IO io;
-    ArrayList<Model> refList;
+    ArrayList<Inproceedings> refList;
     
     public TextUI() {
         io = new ConsoleIO(new Scanner(System.in));
-        refList = new ArrayList<Model>();
+        refList = new ArrayList<Inproceedings>();
     }
 
     public void start() {
@@ -38,8 +37,8 @@ public class TextUI {
                 io.read("booktitle: "),
                 Integer.parseInt(io.read("year: "))));
         } else if (command.equals("print")) {
-            for (Model model : refList) {
-                io.printHumanReadableModel(model);
+            for (Inproceedings inproceedings : refList) {
+                io.printHumanReadableInproceedings(inproceedings);
             }
         }
         

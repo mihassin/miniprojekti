@@ -4,7 +4,7 @@ package wad.pohjalimat.model;
  *
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
  */
-public class Inproceedings implements Model {
+public class Inproceedings {
     String author;
     String title;
     String booktitle;
@@ -21,22 +21,18 @@ public class Inproceedings implements Model {
         this.year = year;
     }
 
-    @Override
     public String getAuthor() {
         return author;
     }
 
-    @Override
     public String getTitle() {
         return title;
     }
 
-    @Override
     public String getBooktitle() {
         return booktitle;
     }
 
-    @Override
     public int getYear() {
         return year;
     }
