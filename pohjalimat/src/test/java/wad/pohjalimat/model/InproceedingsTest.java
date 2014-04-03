@@ -27,8 +27,8 @@ public class InproceedingsTest {
 
     @Before
     public void setUp() {
-        ip=new Inproceedings("Pena", "Muistio", "Penan muistio", 2000);
-        mouckaPhii = Inproceedings.create("Pena", "Muistio", "Penan muistio", 2000);
+        ip=new Inproceedings("viite1","Pena", "Muistio", "Penan muistio", 2000);
+        mouckaPhii = Inproceedings.create("viite1","Pena", "Muistio", "Penan muistio", 2000);
     }
     
     /**
@@ -36,7 +36,7 @@ public class InproceedingsTest {
      */
     @Test
     public void testCreate() {
-        assertEquals(ip, Inproceedings.create("Pena", "Muistio", "Penan muistio", 2000));
+        assertEquals(ip, Inproceedings.create("Viite1","Pena", "Muistio", "Penan muistio", 2000));
     }
 
     /**

@@ -5,6 +5,7 @@ package wad.pohjalimat.model;
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
  */
 public class Inproceedings {
+    String masterKey;
     String author;
     String title;
     String booktitle;
@@ -23,11 +24,12 @@ public class Inproceedings {
     String note;
     String key;
     
-    public static Inproceedings create(String author, String title, String booktitle, int year) {
-        return new Inproceedings(author, title, booktitle, year);
+    public static Inproceedings create(String masterKey, String author, String title, String booktitle, int year) {
+        return new Inproceedings(masterKey, author, title, booktitle, year);
     }
 
-    protected Inproceedings(String author, String title, String booktitle, int year) {
+    protected Inproceedings(String masterKey, String author, String title, String booktitle, int year) {
+        this.masterKey = masterKey;
         this.author = author;
         this.title = title;
         this.booktitle = booktitle;
@@ -47,6 +49,10 @@ public class Inproceedings {
         this.key = "{NULL}";
     }
 
+    public String getMasterKey() {
+        return masterKey;
+    }
+    
     public String getAuthor() {
         return author;
     }

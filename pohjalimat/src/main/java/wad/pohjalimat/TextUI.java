@@ -32,6 +32,7 @@ public class TextUI {
 
             if (command.equals("addentry")) {
                 refList.add(Inproceedings.create(
+                        io.read("Reference key: "),
                         io.read("author: "),
                         io.read("title: "),
                         io.read("booktitle: "),
