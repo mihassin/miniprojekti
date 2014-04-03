@@ -1,5 +1,0 @@
-<testsuite tests='1' results='0' failures='0' disabled='1' errors='0' time='0.031' name='behavior.viitelistan_naytto_bibtex_formaatissa'>
-  <testcase classname='behavior.viitelistan_naytto_bibtex_formaatissa' name='käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla' time='0.003'>
-    <skipped />
-  </testcase>
-</testsuite>
