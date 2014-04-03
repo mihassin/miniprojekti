@@ -5,25 +5,25 @@ package wad.pohjalimat.model;
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
  */
 public class Inproceedings {
+
     String masterKey;
     String author;
     String title;
     String booktitle;
     int year;
-    
+
     // valinnaiset
-    
     String editor;
     int volume;
     String series;
     String pages;
     String address;
-    int month;
+    String month;
     String organisation;
     String publisher;
     String note;
     String key;
-    
+
     public static Inproceedings create(String masterKey, String author, String title, String booktitle, int year) {
         return new Inproceedings(masterKey, author, title, booktitle, year);
     }
@@ -34,15 +34,14 @@ public class Inproceedings {
         this.title = title;
         this.booktitle = booktitle;
         this.year = year;
-        
+
         //valinnaiset alustetaan {NULL} tai -1 arvoilla merkitsemään tyhjää:
-        
         this.editor = "{NULL}";
         this.volume = -1;
         this.series = "{NULL}";
         this.pages = "{NULL}";
         this.address = "{NULL}";
-        this.month = -1;
+        this.month = "{NULL}";
         this.publisher = "{NULL}";
         this.organisation = "{NULL}";
         this.note = "{NULL}";
@@ -52,7 +51,7 @@ public class Inproceedings {
     public String getMasterKey() {
         return masterKey;
     }
-    
+
     public String getAuthor() {
         return author;
     }
@@ -68,49 +67,48 @@ public class Inproceedings {
     public int getYear() {
         return year;
     }
-    
+
     public String getEditor() {
         return editor;
     }
-    
+
     public int getVolume() {
         return volume;
     }
-    
+
     public String getSeries() {
         return series;
     }
-    
+
     public String getPages() {
         return pages;
     }
-    
+
     public String getAddress() {
         return address;
     }
-    
-    public int getMont() {
+
+    public String getMonth() {
         return month;
     }
-    
+
     public String getPublisher() {
         return publisher;
     }
-    
+
     public String getOrganisation() {
         return organisation;
     }
-    
+
     public String getNote() {
         return note;
     }
-    
+
     public String getKey() {
         return key;
     }
-    
+
     // setterit
- 
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -125,44 +123,44 @@ public class Inproceedings {
 
     public void setYear(int year) {
         this.year = year;
-    } 
-    
+    }
+
     public void setEditor(String editor) {
         this.editor = editor;
     }
-    
+
     public void setVolume(int volume) {
         this.volume = volume;
     }
-    
+
     public void setSeries(String series) {
         this.series = series;
     }
-    
+
     public void setPages(String pages) {
         this.pages = pages;
     }
-    
+
     public void setAddress(String address) {
         this.address = address;
     }
-    
-    public void setMonth(int month) {
+
+    public void setMonth(String month) {
         this.month = month;
     }
-    
+
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
-    
+
     public void setOrganisation(String organisation) {
         this.organisation = organisation;
     }
-    
+
     public void setNote(String note) {
         this.note = note;
     }
-    
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -200,11 +198,11 @@ public class Inproceedings {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         String optionals = "";
-        
+
         if (!editor.equals("{NULL}")) {
             optionals = optionals + "Editor: " + editor + "\n";
         }
@@ -220,7 +218,7 @@ public class Inproceedings {
         if (!address.equals("{NULL}")) {
             optionals = optionals + "Address: " + address + "\n";
         }
-        if (month > -1) {
+        if (!month.equals("{NULL}")) {
             optionals = optionals + "Month: " + month + "\n";
         }
         if (!publisher.equals("{NULL}")) {
@@ -235,17 +233,17 @@ public class Inproceedings {
         if (!key.equals("{NULL}")) {
             optionals = optionals + "Key: " + key + "\n";
         }
-        
-        return "*** " + title + " ***" + "\n" +
-               "Author: " + author + "\n" +
-               "Book title: " + booktitle + "\n" +
-               "Year published: " + year + "\n" + 
-                optionals;
+
+        return "*** " + title + " ***" + "\n"
+                + "Author: " + author + "\n"
+                + "Book title: " + booktitle + "\n"
+                + "Year published: " + year + "\n"
+                + optionals;
     }
-    
+
     public String showEntryInBibTeX() {
         String optionals = "";
-        
+
         if (!editor.equals("{NULL}")) {
             optionals = optionals + "Editor= \"" + editor + "\",\n";
         }
@@ -261,7 +259,7 @@ public class Inproceedings {
         if (!address.equals("{NULL}")) {
             optionals = optionals + "Address= \"" + address + "\",\n";
         }
-        if (month > -1) {
+        if (!month.equals("{NULL}")) {
             optionals = optionals + "Month= \"" + month + "\",\n";
         }
         if (!publisher.equals("{NULL}")) {
@@ -276,13 +274,13 @@ public class Inproceedings {
         if (!key.equals("{NULL}")) {
             optionals = optionals + "Key= \"" + key + "\",\n";
         }
-        
-        return "@INPROCEEDINGS{" + masterKey +",\n" +
-                "author = \"" + author + "\",\n"  +
-                "title = \"" + title + "\",\n"  +
-                "booktitle = \"" + booktitle + "\",\n"  +
-                "year = \"" + year + "\",\n"  +
-                optionals + "}";
+
+        return "@INPROCEEDINGS{" + masterKey + ",\n"
+                + "author = \"" + author + "\",\n"
+                + "title = \"" + title + "\",\n"
+                + "booktitle = \"" + booktitle + "\",\n"
+                + "year = \"" + year + "\",\n"
+                + optionals + "}";
     }
-    
+
 }
