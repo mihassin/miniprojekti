@@ -1,3 +1,0 @@
-<testsuite tests='1' results='1' failures='0' disabled='0' errors='0' time='0.054' name='behavior.viitteen_lisays_selkokielella'>
-  <testcase classname='behavior.viitteen_lisays_selkokielella' name='käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla' time='0.018' />
-</testsuite>
