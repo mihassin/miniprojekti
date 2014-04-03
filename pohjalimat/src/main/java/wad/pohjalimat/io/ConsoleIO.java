@@ -28,13 +28,4 @@ public class ConsoleIO implements IO {
         System.out.println(data);
     }
 
-    @Override
-    public void printHumanReadableInproceedings(Inproceedings inproceedings) {
-        System.out.println("*** " + inproceedings.getTitle() + " ***" + "\n" +
-                           "Author: " + inproceedings.getAuthor() + "\n" +
-                           "Book title: " + inproceedings.getBooktitle() + "\n" +
-                           "Year published: " + inproceedings.getYear() + "\n");
-    }
-
-
 }

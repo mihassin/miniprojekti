@@ -35,13 +35,6 @@ public class StubIO implements IO {
     
     public List<String> getOutput() {
         return output;
-    }
-
-    @Override
-    public void printHumanReadableInproceedings(Inproceedings inproceedings) {
-
-    }
-    
-    
+    }    
     
 }

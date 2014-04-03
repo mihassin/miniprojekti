@@ -38,7 +38,7 @@ public class TextUI {
                         Integer.parseInt(io.read("year: "))));
             } else if (command.equals("print")) {
                 for (Inproceedings inproceedings : refList) {
-                    io.printHumanReadableInproceedings(inproceedings);
+                    io.write(inproceedings.toString());
                 }
             }
             else if(command.equals("exit")) {

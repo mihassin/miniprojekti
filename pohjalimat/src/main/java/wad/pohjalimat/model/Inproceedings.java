@@ -87,4 +87,12 @@ public class Inproceedings {
         return true;
     }
     
+    @Override
+    public String toString() {
+        return "*** " + title + " ***" + "\n" +
+               "Author: " + author + "\n" +
+               "Book title: " + booktitle + "\n" +
+               "Year published: " + year + "\n";
+    }
+    
 }

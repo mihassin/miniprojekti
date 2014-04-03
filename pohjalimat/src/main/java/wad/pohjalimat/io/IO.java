@@ -11,5 +11,4 @@ import wad.pohjalimat.model.Inproceedings;
 public interface IO {
     public String read(String label);
     public void write(String data);
-    public void printHumanReadableInproceedings(Inproceedings inproceedings);
 }
