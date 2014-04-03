@@ -10,10 +10,10 @@ scenario "käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoill
         io = new StubIO("addentry", "refKey", "ransum", "Master's thesis", "sinep", "2015", "bibtex", "exit")
         textui = new TextUI(io)
     }
-    when 'käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa' {
+    when 'käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa', {
         textui.start()
     }
-    then 'ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla' {
+    then 'ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla', {
         io.getOutput().shouldHave("@INPROCEEDINGS{refKey,")
     }
 }
