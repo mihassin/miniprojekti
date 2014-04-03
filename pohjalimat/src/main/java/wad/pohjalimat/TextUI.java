@@ -40,13 +40,11 @@ public class TextUI {
                 for (Inproceedings inproceedings : refList) {
                     io.write(inproceedings.toString());
                 }
-            }
-            else if(command.equals("exit")) {
+            } else if (command.equals("exit")) {
                 break;
             }
 
         }
-
 
     }
 

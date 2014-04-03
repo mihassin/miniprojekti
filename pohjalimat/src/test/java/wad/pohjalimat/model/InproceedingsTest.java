@@ -157,4 +157,14 @@ public class InproceedingsTest {
     public void unFreshHash() {
         assertNotSame(ip.hashCode(), mouckaPhii.hashCode());
     }
+    
+    @Test
+    public void testToString() {
+        String testString = "*** Muistio ***\nAuthor: Pena\n"
+                            + "Book title: Penan muistio\n"
+                            + "Year published: 2000\n";
+        
+        assertEquals(testString, ip.toString());
+    }
+    
 }
