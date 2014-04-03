@@ -25,6 +25,7 @@ public class TextUI {
             io.write("");
             io.write("Enter 'addentry' to add an inproceedings BibTex entry");
             io.write("Enter 'print' to print a list of added content");
+            io.write("Enter 'bibtex' to print a list of added content in BibTex format");
             io.write("Enter 'exit' to quit the program");
             io.write("");
 
@@ -41,7 +42,11 @@ public class TextUI {
                 for (Inproceedings inproceedings : refList) {
                     io.write(inproceedings.toString());
                 }
-            } else if (command.equals("exit")) {
+            } else if (command.equals("bibtex")) {
+                for (Inproceedings inproceedings : refList) {
+                    io.write(inproceedings.showEntryInBibTeX());
+                }
+            }else if (command.equals("exit")) {
                 break;
             }
 
