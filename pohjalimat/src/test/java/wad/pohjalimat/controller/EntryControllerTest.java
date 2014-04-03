@@ -21,8 +21,8 @@ import org.springframework.ui.Model;
  * @author Juhani Heliö
  */
 public class EntryControllerTest {
-    EntryController instance;
-    Model m;
+    private EntryController instance;
+    private Model m;
     public EntryControllerTest() {
     }
     
