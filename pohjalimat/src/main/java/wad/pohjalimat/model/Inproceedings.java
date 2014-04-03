@@ -247,34 +247,34 @@ public class Inproceedings {
         String optionals = "";
         
         if (!editor.equals("{NULL}")) {
-            optionals = optionals + "Editor: \"" + editor + "\",\n";
+            optionals = optionals + "Editor= \"" + editor + "\",\n";
         }
         if (volume > -1) {
-            optionals = optionals + "Volume: \"" + volume + "\",\n";
+            optionals = optionals + "Volume= \"" + volume + "\",\n";
         }
         if (!series.equals("{NULL}")) {
-            optionals = optionals + "Series: \"" + series + "\",\n";
+            optionals = optionals + "Series= \"" + series + "\",\n";
         }
         if (!pages.equals("{NULL}")) {
-            optionals = optionals + "Pages: \"" + pages + "\",\n";
+            optionals = optionals + "Pages= \"" + pages + "\",\n";
         }
         if (!address.equals("{NULL}")) {
-            optionals = optionals + "Address: \"" + address + "\",\n";
+            optionals = optionals + "Address= \"" + address + "\",\n";
         }
         if (month > -1) {
-            optionals = optionals + "Month: \"" + month + "\",\n";
+            optionals = optionals + "Month= \"" + month + "\",\n";
         }
         if (!publisher.equals("{NULL}")) {
-            optionals = optionals + "Publisher: \"" + publisher + "\",\n";
+            optionals = optionals + "Publisher= \"" + publisher + "\",\n";
         }
         if (!organisation.equals("{NULL}")) {
-            optionals = optionals + "Organisation: \"" + organisation + "\",\n";
+            optionals = optionals + "Organisation= \"" + organisation + "\",\n";
         }
         if (!note.equals("{NULL}")) {
-            optionals = optionals + "Note: \"" + note + "\",\n";
+            optionals = optionals + "Note= \"" + note + "\",\n";
         }
         if (!key.equals("{NULL}")) {
-            optionals = optionals + "Key: \"" + key + "\",\n";
+            optionals = optionals + "Key= \"" + key + "\",\n";
         }
         
         return "@INPROCEEDINGS{" + masterKey +",\n" +
