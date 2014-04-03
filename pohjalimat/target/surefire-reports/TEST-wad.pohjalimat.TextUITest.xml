@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.015" errors="0" skipped="0" tests="2" name="wad.pohjalimat.io.ConsoleIOTest">
+<testsuite failures="0" time="0.043" errors="0" skipped="0" tests="1" name="wad.pohjalimat.TextUITest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
@@ -61,6 +61,5 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.014" classname="wad.pohjalimat.io.ConsoleIOTest" name="readReturnsCorrectString"/>
-  <testcase time="0" classname="wad.pohjalimat.io.ConsoleIOTest" name="readReturnsCorrectString2"/>
+  <testcase time="0.001" classname="wad.pohjalimat.TextUITest" name="testStart"/>
 </testsuite>
