@@ -6,6 +6,8 @@
 
 package wad.pohjalimat.controller;
 
+import java.util.Collection;
+import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,7 +21,8 @@ import org.springframework.ui.Model;
  * @author Juhani Heliö
  */
 public class EntryControllerTest {
-    
+    EntryController instance;
+    Model m;
     public EntryControllerTest() {
     }
     
@@ -33,6 +36,44 @@ public class EntryControllerTest {
     
     @Before
     public void setUp() {
+        instance = new EntryController();
+        m=new Model() {
+
+            @Override
+            public Model addAttribute(String string, Object o) {
+                return null;
+            }
+
+            @Override
+            public Model addAttribute(Object o) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Collection<?> clctn) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Map<String, ?> map) {
+                return null;
+            }
+
+            @Override
+            public Model mergeAttributes(Map<String, ?> map) {
+                return null;
+            }
+
+            @Override
+            public boolean containsAttribute(String string) {
+                return false;
+            }
+
+            @Override
+            public Map<String, Object> asMap() {
+                return null;
+            }
+        };
     }
     
     @After
@@ -44,10 +85,8 @@ public class EntryControllerTest {
      */
     @Test
     public void testList() {
-        System.out.println("handleDefault");
-        EntryController instance = new EntryController();
         String expResult = "entries";
-        String result = instance.list(null);
+        String result = instance.list(m);
         assertEquals(expResult, result);
     }
 
@@ -56,10 +95,8 @@ public class EntryControllerTest {
      */
     @Test
     public void testAddEntry() {
-        System.out.println("handleDefault");
-        EntryController instance = new EntryController();
         String expResult = "entry";
-        String result = instance.addEntry(null);
+        String result = instance.addEntry(m);
         assertEquals(expResult, result);
     }
     
