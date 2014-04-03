@@ -32,12 +32,17 @@ public class TextUI {
             String command = io.read("> ");
 
             if (command.equals("addentry")) {
+                try {
                 refList.add(Inproceedings.create(
                         io.read("Reference key: "),
                         io.read("author: "),
                         io.read("title: "),
                         io.read("booktitle: "),
                         Integer.parseInt(io.read("year: "))));
+                } catch (NumberFormatException e) {
+                    io.write("");
+                    io.write("Invalid year");
+                }
             } else if (command.equals("print")) {
                 for (Inproceedings inproceedings : refList) {
                     io.write(inproceedings.toString());
