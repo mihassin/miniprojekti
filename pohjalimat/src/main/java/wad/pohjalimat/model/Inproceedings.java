@@ -32,6 +32,19 @@ public class Inproceedings {
         this.title = title;
         this.booktitle = booktitle;
         this.year = year;
+        
+        //valinnaiset alustetaan {NULL} tai -1 arvoilla merkitsemään tyhjää:
+        
+        this.editor = "{NULL}";
+        this.volume = -1;
+        this.series = "{NULL}";
+        this.pages = -1;
+        this.address = "{NULL}";
+        this.month = -1;
+        this.publisher = "{NULL}";
+        this.organisation = "{NULL}";
+        this.note = "{NULL}";
+        this.key = "{NULL}";
     }
 
     public String getAuthor() {
