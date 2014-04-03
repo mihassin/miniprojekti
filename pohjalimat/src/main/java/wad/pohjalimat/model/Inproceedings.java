@@ -16,7 +16,7 @@ public class Inproceedings {
     String editor;
     int volume;
     String series;
-    int pages;
+    String pages;
     String address;
     int month;
     String organisation;
@@ -40,7 +40,7 @@ public class Inproceedings {
         this.editor = "{NULL}";
         this.volume = -1;
         this.series = "{NULL}";
-        this.pages = -1;
+        this.pages = "{NULL}";
         this.address = "{NULL}";
         this.month = -1;
         this.publisher = "{NULL}";
@@ -81,7 +81,7 @@ public class Inproceedings {
         return series;
     }
     
-    public int getPages() {
+    public String getPages() {
         return pages;
     }
     
@@ -139,7 +139,7 @@ public class Inproceedings {
         this.series = series;
     }
     
-    public void setPages(int pages) {
+    public void setPages(String pages) {
         this.pages = pages;
     }
     
@@ -203,10 +203,44 @@ public class Inproceedings {
     
     @Override
     public String toString() {
+        String optionals = "";
+        
+        if (!editor.equals("{NULL}")) {
+            optionals = optionals + "Editor: " + editor + "\n";
+        }
+        if (volume > -1) {
+            optionals = optionals + "Volume: " + volume + "\n";
+        }
+        if (!series.equals("{NULL}")) {
+            optionals = optionals + "Series: " + editor + "\n";
+        }
+        if (!pages.equals("{NULL}")) {
+            optionals = optionals + "Pages: " + pages + "\n";
+        }
+        if (!address.equals("{NULL}")) {
+            optionals = optionals + "Address: " + address + "\n";
+        }
+        if (month > -1) {
+            optionals = optionals + "Month: " + month + "\n";
+        }
+        if (!publisher.equals("{NULL}")) {
+            optionals = optionals + "Publisher: " + publisher + "\n";
+        }
+        if (!organisation.equals("{NULL}")) {
+            optionals = optionals + "Organisation: " + organisation + "\n";
+        }
+        if (!note.equals("{NULL}")) {
+            optionals = optionals + "Note: " + note + "\n";
+        }
+        if (!key.equals("{NULL}")) {
+            optionals = optionals + "Key: " + key + "\n";
+        }
+        
         return "*** " + title + " ***" + "\n" +
                "Author: " + author + "\n" +
                "Book title: " + booktitle + "\n" +
-               "Year published: " + year + "\n";
+               "Year published: " + year + "\n" + 
+                optionals;
     }
     
 }

@@ -7,7 +7,7 @@ description 'Käyttäjänä pystyn näyttämään listan viitteistä selkokielis
 
 scenario "käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla", {
     given 'komento print valittu', {
-        io = new StubIO("addentry", ,"refKey", "ransum", "Master's thesis", "sinep", "2015", "print", "exit")
+        io = new StubIO("addentry", "refKey", "ransum", "Master's thesis", "sinep", "2015", "print", "exit")
         textui = new TextUI(io)
     }
     when 'käyttäjä haluaa nähdä selkokieliset tiedot viitteistä', {
