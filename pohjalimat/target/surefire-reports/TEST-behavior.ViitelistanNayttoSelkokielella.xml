@@ -1,0 +1,5 @@
+<testsuite tests='1' results='0' failures='0' disabled='1' errors='0' time='0.433' name='behavior.viitelistan_naytto_selkokielella'>
+  <testcase classname='behavior.viitelistan_naytto_selkokielella' name='käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla' time='0.026'>
+    <skipped />
+  </testcase>
+</testsuite>

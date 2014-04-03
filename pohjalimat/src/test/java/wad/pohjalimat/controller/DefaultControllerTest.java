@@ -45,11 +45,11 @@ public class DefaultControllerTest {
     public void testHandleDefault() {
         System.out.println("handleDefault");
         DefaultController instance = new DefaultController();
-        String expResult = "";
+        String expResult = "entries";
         String result = instance.handleDefault();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
