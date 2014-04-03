@@ -44,7 +44,11 @@ public class EntryControllerTest {
      */
     @Test
     public void testList() {
-        
+        System.out.println("handleDefault");
+        EntryController instance = new EntryController();
+        String expResult = "entries";
+        String result = instance.list(null);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -52,7 +56,11 @@ public class EntryControllerTest {
      */
     @Test
     public void testAddEntry() {
-        
+        System.out.println("handleDefault");
+        EntryController instance = new EntryController();
+        String expResult = "entry";
+        String result = instance.addEntry(null);
+        assertEquals(expResult, result);
     }
     
 }
