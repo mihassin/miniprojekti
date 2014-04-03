@@ -10,6 +10,19 @@ public class Inproceedings {
     String booktitle;
     int year;
     
+    // valinnaiset
+    
+    String editor;
+    int volume;
+    String series;
+    int pages;
+    String address;
+    int month;
+    String organisation;
+    String publisher;
+    String note;
+    String key;
+    
     public static Inproceedings create(String author, String title, String booktitle, int year) {
         return new Inproceedings(author, title, booktitle, year);
     }
@@ -36,6 +49,48 @@ public class Inproceedings {
     public int getYear() {
         return year;
     }
+    
+    public String getEditor() {
+        return editor;
+    }
+    
+    public int getVolume() {
+        return volume;
+    }
+    
+    public String getSeries() {
+        return series;
+    }
+    
+    public int getPages() {
+        return pages;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+    
+    public int getMont() {
+        return month;
+    }
+    
+    public String getPublisher() {
+        return publisher;
+    }
+    
+    public String getOrganisation() {
+        return organisation;
+    }
+    
+    public String getNote() {
+        return note;
+    }
+    
+    public String getKey() {
+        return key;
+    }
+    
+    // setterit
  
     public void setAuthor(String author) {
         this.author = author;
@@ -52,6 +107,46 @@ public class Inproceedings {
     public void setYear(int year) {
         this.year = year;
     } 
+    
+    public void setEditor(String editor) {
+        this.editor = editor;
+    }
+    
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+    
+    public void setSeries(String series) {
+        this.series = series;
+    }
+    
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+    
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    public void setMonth(int month) {
+        this.month = month;
+    }
+    
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+    
+    public void setOrganisation(String organisation) {
+        this.organisation = organisation;
+    }
+    
+    public void setNote(String note) {
+        this.note = note;
+    }
+    
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     @Override
     public int hashCode() {
