@@ -36,6 +36,22 @@ public class Inproceedings {
     public int getYear() {
         return year;
     }
+ 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setBooktitle(String bookTitle) {
+        this.booktitle = bookTitle;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    } 
 
     @Override
     public int hashCode() {

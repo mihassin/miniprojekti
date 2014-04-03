@@ -1,11 +1,27 @@
-<easyb time='Wed Apr 02 21:30:04 EEST 2014' totalbehaviors='1' totalfailedbehaviors='0' totalpendingbehaviors='1' executionTime='1214'>
-  <stories scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='1214'>
-    <story name='viitteen_lisays_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='1214'>
+<easyb time='Thu Apr 03 12:05:42 EEST 2014' totalbehaviors='3' totalfailedbehaviors='0' totalpendingbehaviors='3' executionTime='498'>
+  <stories scenarios='3' failedscenarios='0' pendingscenarios='3' executionTime='498'>
+    <story name='viitelistan_naytto_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='433'>
+      <description name='Käyttäjänä pystyn näyttämään listan viitteistä selkokielisenä' />
+      <scenario name='käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla' result='pending' executionTime='26'>
+        <given name='komento print valittu' result='success' />
+        <when name='käyttäjä haluaa nähdä selkokieliset tiedot viitteistä' result='success' />
+        <then name='ohjelma tulostaa tallessa olevat viitteet selkokielisinä' result='pending' />
+      </scenario>
+    </story>
+    <story name='viitteen_lisays_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='34'>
       <description name='Käyttäjänä pystyn lisäämään Inproceedings-tyyppisen viitteen selkokielellä' />
-      <scenario name='käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla' result='pending' executionTime='70'>
+      <scenario name='käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla' result='pending' executionTime='2'>
         <given name='komento addentry valittu' result='success' />
         <when name='oikean muotoiset viitteen tiedot syötetään' result='success' />
         <then name='viite on tallessa ohjelman tietämässä paikassa' result='pending' />
+      </scenario>
+    </story>
+    <story name='viitelistan_naytto_bibtex_formaatissa' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='31'>
+      <description name='Käyttäjänä pystyn näyttämään listan viitteistä BibTex-formaatissa' />
+      <scenario name='käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla' result='pending' executionTime='3'>
+        <given name='komento xxxx valittu' result='success' />
+        <when name='käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa' result='success' />
+        <then name='ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla' result='pending' />
       </scenario>
     </story>
   </stories>

@@ -66,10 +66,10 @@
             </thead>
             <tbody>
               <tr class='primaryRow'>
-                <td>1</td>
+                <td>3</td>
                 <td class=''>0</td>
-                <td class='stepResultPending'>1</td>
-                <td>1.214</td>
+                <td class='stepResultPending'>3</td>
+                <td>0.498</td>
               </tr>
             </tbody>
           </table>
@@ -86,11 +86,11 @@
             </thead>
             <tbody>
               <tr class='primaryRow'>
-                <td>1</td>
-                <td>1</td>
+                <td>3</td>
+                <td>3</td>
                 <td class=''>0</td>
-                <td class='stepResultPending'>1</td>
-                <td>1.214</td>
+                <td class='stepResultPending'>3</td>
+                <td>0.498</td>
               </tr>
             </tbody>
           </table>
@@ -133,13 +133,13 @@
       <tr class='primaryRow'>
         <td>
          
-          <a href="#" onclick="$('scenarios_for_story_' + 0).toggle(); return false;">viitteen_lisays_selkokielella</a>
+          <a href="#" onclick="$('scenarios_for_story_' + 0).toggle(); return false;">viitelistan_naytto_selkokielella</a>
          
         </td>
         <td>1</td>
         <td class=''>0</td>
         <td class='stepResultPending'>1</td>
-        <td>1.214</td>
+        <td>0.433</td>
       </tr>
 
        
@@ -149,9 +149,61 @@
             <tbody>
               
               <tr class='primaryScenarioRow'>
+                <td title='Scenario'>käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla</td>
+                <td title='Result' class='stepResultPending'>pending</td>
+                <td title='Time (sec)'>0.026</td>
+              </tr>
+              
+              <tr class='scenarioComponents'>
+                <td>given komento print valittu</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+              <tr class='scenarioComponents'>
+                <td>when käyttäjä haluaa nähdä selkokieliset tiedot viitteistä</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+              <tr class='scenarioComponents'>
+                <td>then ohjelma tulostaa tallessa olevat viitteet selkokielisinä</td>
+                <td class='stepResultPending'>pending</td>
+                <td />
+              </tr>
+              
+              
+              
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      
+      
+      <tr class='secondaryRow'>
+        <td>
+         
+          <a href="#" onclick="$('scenarios_for_story_' + 1).toggle(); return false;">viitteen_lisays_selkokielella</a>
+         
+        </td>
+        <td>1</td>
+        <td class=''>0</td>
+        <td class='stepResultPending'>1</td>
+        <td>0.034</td>
+      </tr>
+
+       
+      <tr id='scenarios_for_story_1' class='scenariosForStory' style='display:none;'>
+        <td colspan='5'>
+          <table class='scenariosForStoriesTable'>
+            <tbody>
+              
+              <tr class='primaryScenarioRow'>
                 <td title='Scenario'>käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla</td>
                 <td title='Result' class='stepResultPending'>pending</td>
-                <td title='Time (sec)'>0.07</td>
+                <td title='Time (sec)'>0.002</td>
               </tr>
               
               <tr class='scenarioComponents'>
@@ -182,6 +234,58 @@
       </tr>
       
       
+      <tr class='primaryRow'>
+        <td>
+         
+          <a href="#" onclick="$('scenarios_for_story_' + 2).toggle(); return false;">viitelistan_naytto_bibtex_formaatissa</a>
+         
+        </td>
+        <td>1</td>
+        <td class=''>0</td>
+        <td class='stepResultPending'>1</td>
+        <td>0.031</td>
+      </tr>
+
+       
+      <tr id='scenarios_for_story_2' class='scenariosForStory' style='display:none;'>
+        <td colspan='5'>
+          <table class='scenariosForStoriesTable'>
+            <tbody>
+              
+              <tr class='primaryScenarioRow'>
+                <td title='Scenario'>käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla</td>
+                <td title='Result' class='stepResultPending'>pending</td>
+                <td title='Time (sec)'>0.003</td>
+              </tr>
+              
+              <tr class='scenarioComponents'>
+                <td>given komento xxxx valittu</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+              <tr class='scenarioComponents'>
+                <td>when käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa</td>
+                <td class='stepResultSuccess'>success</td>
+                <td />
+              </tr>
+              
+              
+              <tr class='scenarioComponents'>
+                <td>then ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla</td>
+                <td class='stepResultPending'>pending</td>
+                <td />
+              </tr>
+              
+              
+              
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      
+      
     </tbody>
   </table>
 </div>
@@ -192,8 +296,8 @@
 <div id='StoriesListPlain' style='display:none;'>
   <h2>Stories Text</h2>
   
-  <div>1 scenario (including 1 pending) executed successfully.</div>
-  <div><br/><br/>&nbsp;&nbsp;Story: viitteen_lisays_selkokielella<br/><br/>&nbsp;&nbsp;&nbsp;Käyttäjänä pystyn lisäämään Inproceedings-tyyppisen viitteen selkokielellä<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given komento addentry valittu<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when oikean muotoiset viitteen tiedot syötetään<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then viite on tallessa ohjelman tietämässä paikassa&nbsp;<span style='color:#BABFEE;'>[PENDING]</span></div>
+  <div>3 scenarios (including 3 pending) executed successfully.</div>
+  <div><br/><br/>&nbsp;&nbsp;Story: viitelistan_naytto_selkokielella<br/><br/>&nbsp;&nbsp;&nbsp;Käyttäjänä pystyn näyttämään listan viitteistä selkokielisenä<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given komento print valittu<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when käyttäjä haluaa nähdä selkokieliset tiedot viitteistä<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then ohjelma tulostaa tallessa olevat viitteet selkokielisinä&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;Story: viitteen_lisays_selkokielella<br/><br/>&nbsp;&nbsp;&nbsp;Käyttäjänä pystyn lisäämään Inproceedings-tyyppisen viitteen selkokielellä<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given komento addentry valittu<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when oikean muotoiset viitteen tiedot syötetään<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then viite on tallessa ohjelman tietämässä paikassa&nbsp;<span style='color:#BABFEE;'>[PENDING]</span><br/><br/>&nbsp;&nbsp;Story: viitelistan_naytto_bibtex_formaatissa<br/><br/>&nbsp;&nbsp;&nbsp;Käyttäjänä pystyn näyttämään listan viitteistä BibTex-formaatissa<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;scenario käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given komento xxxx valittu<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla&nbsp;<span style='color:#BABFEE;'>[PENDING]</span></div>
 </div>
 
       </div>

@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 public class InproceedingsTest {
     
     Inproceedings ip;
+    Inproceedings mouckaPhii;
     
     public InproceedingsTest() {
     }
@@ -27,6 +28,7 @@ public class InproceedingsTest {
     @Before
     public void setUp() {
         ip=new Inproceedings("Pena", "Muistio", "Penan muistio", 2000);
+        mouckaPhii = Inproceedings.create("Pena", "Muistio", "Penan muistio", 2000);
     }
     
     /**
@@ -42,7 +44,7 @@ public class InproceedingsTest {
      */
     @Test
     public void testGetAuthor() {
-        
+        assertEquals( "Pena", ip.getAuthor() ); //slime-marko
     }
 
     /**
@@ -50,7 +52,7 @@ public class InproceedingsTest {
      */
     @Test
     public void testGetTitle() {
-        
+        assertEquals( "Muistio", ip.getTitle() ); // slime-make
     }
 
     /**
@@ -59,6 +61,7 @@ public class InproceedingsTest {
     @Test
     public void testGetBooktitle() {
         
+        assertEquals( "Penan muistio", ip.getBooktitle() ); //slime-kake
     }
 
     /**
@@ -67,6 +70,91 @@ public class InproceedingsTest {
     @Test
     public void testGetYear() {
         
+        assertEquals( 2000, ip.getYear() ); //slimeM
     }
     
+    /* slimy-marko */
+    @Test
+    public void equalsMethodObjNull() {
+        assertFalse(ip.equals(null));
+    }
+    
+    @Test
+    public void selfEqTrueOFC() {
+        assertTrue(ip.equals(ip));
+    }
+   
+    @Test
+    public void wiffMockClassTru() {
+        assertTrue(ip.equals(mouckaPhii));
+    }
+    
+    @Test
+    public void wiffMockClassSetNewAuth() {
+        mouckaPhii.setAuthor("slime");
+        assertFalse(ip.equals(mouckaPhii));
+    }
+    
+    @Test
+    public void wiffMockClassSetNewTitle() {
+        mouckaPhii.setTitle("slime");
+        assertFalse(ip.equals(mouckaPhii));
+    }
+    
+    @Test
+    public void wiffMockClassSetNewBookTitle() {
+        mouckaPhii.setBooktitle("slime");
+        assertFalse(ip.equals(mouckaPhii));
+    }
+    
+    @Test
+    public void wiffMockClassSetNewYarr() {
+        mouckaPhii.setYear(1234);
+        assertFalse(ip.equals(mouckaPhii));
+    }
+    
+    @Test
+    public void stringgingInprocedding() {
+        assertFalse(ip.equals(123));
+    }
+    
+    @Test
+    public void gettinNSettinAuth() {
+        ip.setAuthor("slime");
+        
+        assertEquals("slime", ip.getAuthor());
+    }
+    
+    @Test
+    public void gettinNSettinTitle() {
+        ip.setTitle("slime");
+        
+        assertEquals("slime", ip.getTitle());
+    }
+    
+    @Test
+    public void gettinNSettinBookTitle() {
+        ip.setBooktitle("slime");
+        
+        assertEquals("slime", ip.getBooktitle());
+    }
+    
+    @Test
+    public void gettinNSettinYARR() {
+        ip.setYear(1234);
+        
+        assertEquals(1234, ip.getYear());
+    }
+    
+    @Test
+    public void freshHash() {
+        int hashh = ip.hashCode();
+        
+        assertEquals(hashh, ip.hashCode());
+    }
+    
+    @Test
+    public void unFreshHash() {
+        assertNotSame(ip.hashCode(), mouckaPhii.hashCode());
+    }
 }
