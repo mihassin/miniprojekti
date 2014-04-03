@@ -6,7 +6,14 @@ import wad.pohjalimat.model.*
 description 'Käyttäjänä pystyn näyttämään listan viitteistä BibTex-formaatissa'
 
 scenario "käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla", {
-    given 'komento xxxx valittu'
-    when 'käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa'
-    then 'ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla'
+    given 'komento bibtex valittu' {
+        io = new StubIO("addentry", "refKey", "ransum", "Master's thesis", "sinep", "2015", "bibtex", "exit")
+        textui = new TextUI(io)
+    }
+    when 'käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa' {
+        textui.start()
+    }
+    then 'ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla' {
+        io.getOutput().shouldHave("@INPROCEEDINGS{refKey,")
+    }
 }
