@@ -1,5 +1,10 @@
-<testsuite tests='1' results='0' failures='0' disabled='1' errors='0' time='0.433' name='behavior.viitelistan_naytto_selkokielella'>
-  <testcase classname='behavior.viitelistan_naytto_selkokielella' name='käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla' time='0.026'>
-    <skipped />
+<testsuite tests='1' results='0' failures='1' disabled='0' errors='0' time='0.091' name='behavior.viitelistan_naytto_selkokielella'>
+  <testcase classname='behavior.viitelistan_naytto_selkokielella' name='käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla' time='0.032'>
+    <failure message='Step "ohjelma tulostaa tallessa olevat viitteet selkokielisinä" -- [, Enter &apos;addentry&apos; to add an inproceedings BibTex entry, Enter &apos;print&apos; to print a list of added content, Enter &apos;exit&apos; to quit the program, , , Enter &apos;addentry&apos; to add an inproceedings BibTex entry, Enter &apos;print&apos; to print a list of added content, Enter &apos;exit&apos; to quit the program, , , Enter &apos;addentry&apos; to add an inproceedings BibTex entry, Enter &apos;print&apos; to print a list of added content, Enter &apos;exit&apos; to quit the program, ] doesn&apos;t contain ransum'>Step "ohjelma tulostaa tallessa olevat viitteet selkokielisinä" -- [, Enter 'addentry' to add an inproceedings BibTex entry, Enter 'print' to print a list of added content, Enter 'exit' to quit the program, , , Enter 'addentry' to add an inproceedings BibTex entry, Enter 'print' to print a list of added content, Enter 'exit' to quit the program, , , Enter 'addentry' to add an inproceedings BibTex entry, Enter 'print' to print a list of added content, Enter 'exit' to quit the program, ] doesn't contain ransum
+
+    scenario käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla
+      given komento print valittu
+      when käyttäjä haluaa nähdä selkokieliset tiedot viitteistä
+      then ohjelma tulostaa tallessa olevat viitteet selkokielisinä</failure>
   </testcase>
 </testsuite>

@@ -1,27 +1,29 @@
-<easyb time='Thu Apr 03 12:05:42 EEST 2014' totalbehaviors='3' totalfailedbehaviors='0' totalpendingbehaviors='3' executionTime='498'>
-  <stories scenarios='3' failedscenarios='0' pendingscenarios='3' executionTime='498'>
-    <story name='viitelistan_naytto_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='433'>
-      <description name='Käyttäjänä pystyn näyttämään listan viitteistä selkokielisenä' />
-      <scenario name='käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla' result='pending' executionTime='26'>
-        <given name='komento print valittu' result='success' />
-        <when name='käyttäjä haluaa nähdä selkokieliset tiedot viitteistä' result='success' />
-        <then name='ohjelma tulostaa tallessa olevat viitteet selkokielisinä' result='pending' />
-      </scenario>
-    </story>
-    <story name='viitteen_lisays_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='34'>
-      <description name='Käyttäjänä pystyn lisäämään Inproceedings-tyyppisen viitteen selkokielellä' />
-      <scenario name='käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla' result='pending' executionTime='2'>
-        <given name='komento addentry valittu' result='success' />
-        <when name='oikean muotoiset viitteen tiedot syötetään' result='success' />
-        <then name='viite on tallessa ohjelman tietämässä paikassa' result='pending' />
-      </scenario>
-    </story>
-    <story name='viitelistan_naytto_bibtex_formaatissa' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='31'>
+<easyb time='Thu Apr 03 13:35:48 EEST 2014' totalbehaviors='3' totalfailedbehaviors='1' totalpendingbehaviors='1' executionTime='490'>
+  <stories scenarios='3' failedscenarios='1' pendingscenarios='1' executionTime='490'>
+    <story name='viitelistan_naytto_bibtex_formaatissa' scenarios='1' failedscenarios='0' pendingscenarios='1' executionTime='345'>
       <description name='Käyttäjänä pystyn näyttämään listan viitteistä BibTex-formaatissa' />
-      <scenario name='käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla' result='pending' executionTime='3'>
+      <scenario name='käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla' result='pending' executionTime='21'>
         <given name='komento xxxx valittu' result='success' />
         <when name='käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa' result='success' />
         <then name='ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla' result='pending' />
+      </scenario>
+    </story>
+    <story name='viitelistan_naytto_selkokielella' scenarios='1' failedscenarios='1' pendingscenarios='0' executionTime='91'>
+      <description name='Käyttäjänä pystyn näyttämään listan viitteistä selkokielisenä' />
+      <scenario name='käyttäjä voi listata tallennetut viitteet selkokielisillä tiedoilla' result='failure' executionTime='32'>
+        <given name='komento print valittu' result='success' />
+        <when name='käyttäjä haluaa nähdä selkokieliset tiedot viitteistä' result='success' />
+        <then name='ohjelma tulostaa tallessa olevat viitteet selkokielisinä' result='failure'>
+          <failure message='[, Enter &apos;addentry&apos; to add an inproceedings BibTex entry, Enter &apos;print&apos; to print a list of added content, Enter &apos;exit&apos; to quit the program, , , Enter &apos;addentry&apos; to add an inproceedings BibTex entry, Enter &apos;print&apos; to print a list of added content, Enter &apos;exit&apos; to quit the program, , , Enter &apos;addentry&apos; to add an inproceedings BibTex entry, Enter &apos;print&apos; to print a list of added content, Enter &apos;exit&apos; to quit the program, ] doesn&apos;t contain ransum' />
+        </then>
+      </scenario>
+    </story>
+    <story name='viitteen_lisays_selkokielella' scenarios='1' failedscenarios='0' pendingscenarios='0' executionTime='54'>
+      <description name='Käyttäjänä pystyn lisäämään Inproceedings-tyyppisen viitteen selkokielellä' />
+      <scenario name='käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla' result='success' executionTime='18'>
+        <given name='komento addentry valittu' result='success' />
+        <when name='oikean muotoiset viitteen tiedot syötetään' result='success' />
+        <then name='viite on tallessa ohjelman tietämässä paikassa' result='success' />
       </scenario>
     </story>
   </stories>

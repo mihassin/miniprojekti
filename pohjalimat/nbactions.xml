@@ -14,4 +14,11 @@
             <goal>org.pitest:pitest-maven:mutationCoverage</goal>
         </goals>
     </action>
+    <action>
+            <actionName>CUSTOM-easyB-test</actionName>
+            <displayName>easyB-test</displayName>
+            <goals>
+                <goal>integration-test</goal>
+            </goals>
+        </action>
 </actions>
