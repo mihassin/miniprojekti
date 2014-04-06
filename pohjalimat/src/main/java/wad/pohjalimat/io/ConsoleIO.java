@@ -1,10 +1,6 @@
-
-
 package wad.pohjalimat.io;
 
-import java.io.PrintWriter;
 import java.util.Scanner;
-import wad.pohjalimat.model.Inproceedings;
 
 /**
  *

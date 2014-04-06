@@ -4,7 +4,6 @@ package wad.pohjalimat.io;
 
 import java.util.ArrayList;
 import java.util.List;
-import wad.pohjalimat.model.Inproceedings;
 
 /**
  * This is a helper class for easyB tests
