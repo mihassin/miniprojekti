@@ -21,15 +21,20 @@ public class Addentry implements Command {
     @Override
     public void run() {
         try {
-            refList.add(Inproceedings.create(
-                    io.read("Reference key: "),
-                    io.read("author: "),
-                    io.read("title: "),
-                    io.read("booktitle: "),
-                    Integer.parseInt(io.read("year: "))));
+            try {
+                refList.add(Inproceedings.create(
+                        io.read("Reference key: "),
+                        io.read("author: "),
+                        io.read("title: "),
+                        io.read("booktitle: "),
+                        Integer.parseInt(io.read("year: "))));
+            } catch (NullPointerException e) {
+                io.write("");
+                io.write("Invalid entry");
+            }
         } catch (NumberFormatException e) {
             io.write("");
-            io.write("Invalid year");
+            io.write("Invalid entry");
         }
     }
 }
