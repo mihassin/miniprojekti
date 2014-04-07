@@ -25,6 +25,7 @@ public class Inproceedings {
     String key;
 
     public static Inproceedings create(String masterKey, String author, String title, String booktitle, int year) {
+        if(masterKey.isEmpty() || author.isEmpty() || title.isEmpty() || booktitle.isEmpty()) throw new NullPointerException();
         return new Inproceedings(masterKey, author, title, booktitle, year);
     }
 
