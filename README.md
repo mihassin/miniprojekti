@@ -5,5 +5,7 @@ https://docs.google.com/spreadsheet/ccc?key=0AqogwfYeUFLTdHVFZ3d1ckRGazhGcExaeTh
 
 CI-palvelin (konffattu buildaamaan kun gitiin tulee tavaraa): http://ohtu.jamo.io/view/miniprojektit/job/pohjalimat-miniprojekti/
 
-Viimeisimmän toimivan buildin .war:
-http://ohtu.jamo.io/view/miniprojektit/job/pohjalimat-miniprojekti/ws/pohjalimat/target/pohjalimat-1.0-SNAPSHOT.war
+Viimeisimmän toimivan buildin .jar:
+http://ohtu.jamo.io/view/miniprojektit/job/pohjalimat-miniprojekti/lastSuccessfulBuild/artifact/pohjalimat/target/pohjalimat-1.0-SNAPSHOT.jar
+
+heroku TODO

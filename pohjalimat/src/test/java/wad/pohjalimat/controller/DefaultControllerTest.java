@@ -6,18 +6,24 @@
 
 package wad.pohjalimat.controller;
 
+import java.util.Collection;
+import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.springframework.ui.Model;
 
 /**
  *
  * @author Juhani Heliö
  */
 public class DefaultControllerTest {
+    
+    private Model m;
+    DefaultController instance;
     
     public DefaultControllerTest() {
     }
@@ -32,6 +38,44 @@ public class DefaultControllerTest {
     
     @Before
     public void setUp() {
+        m=new Model() {
+
+            @Override
+            public Model addAttribute(String string, Object o) {
+                return null;
+            }
+
+            @Override
+            public Model addAttribute(Object o) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Collection<?> clctn) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Map<String, ?> map) {
+                return null;
+            }
+
+            @Override
+            public Model mergeAttributes(Map<String, ?> map) {
+                return null;
+            }
+
+            @Override
+            public boolean containsAttribute(String string) {
+                return false;
+            }
+
+            @Override
+            public Map<String, Object> asMap() {
+                return null;
+            }
+        };
+        instance = new DefaultController();
     }
     
     @After
@@ -43,13 +87,9 @@ public class DefaultControllerTest {
      */
     @Test
     public void testHandleDefault() {
-        System.out.println("handleDefault");
-        DefaultController instance = new DefaultController();
         String expResult = "entries";
         String result = instance.handleDefault();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

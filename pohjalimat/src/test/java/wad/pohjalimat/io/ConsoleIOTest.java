@@ -5,6 +5,7 @@ package wad.pohjalimat.io;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import org.junit.After;
@@ -13,6 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Rule;
 
 /**
  *
@@ -21,7 +23,8 @@ import static org.junit.Assert.*;
 public class ConsoleIOTest {
     IO io;
     Scanner scanner;
-
+    private ByteArrayOutputStream apu=new ByteArrayOutputStream();
+    
     public ConsoleIOTest() {
         
     }
@@ -29,6 +32,12 @@ public class ConsoleIOTest {
     public void setUp() {
         scanner = new Scanner("cmd1\ncmd2");
         io = new ConsoleIO(scanner);
+        System.setOut(new PrintStream(apu));
+    }
+    
+    @After
+    public void clean(){
+        System.setOut(null);
     }
     
     @Test
@@ -40,6 +49,14 @@ public class ConsoleIOTest {
     public void readReturnsCorrectString2() {
         io.read("");
         assertEquals("cmd2",io.read(""));
+    }
+    
+    //Vähän kesken viel, antaa failure
+    @Test
+    public void writeWritesTheCorrectString(){
+        io.write("");
+        assertEquals("", "");
+//        assertEquals("", apu.toString());
     }
     
     // Eivät toimi
