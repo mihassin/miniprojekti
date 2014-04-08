@@ -280,7 +280,7 @@ public class InproceedingsTest {
         String testString = "@INPROCEEDINGS{giganto1,\n"
 		+ "author = \"Senor Gigante\",\n"
                 + "title = \"El Giganto\",\n"
-                + "booktitle = \"Suuri mies hän on\",\n"
+                + "booktitle = \"Suuri mies h\\\"{a}n on\",\n"
                 + "year = \"2014\",\n"
                 + "editor = \"testeditor\",\n"
                 + "volume = \"9999\",\n"
