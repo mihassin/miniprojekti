@@ -282,6 +282,13 @@ public class Inproceedings {
                 + "booktitle = \"" + booktitle + "\",\n"
                 + "year = \"" + year + "\",\n"
                 + optionals + "}";
+                
+                String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
+                String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
+                String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
+                String muunnosAjaB = muunnosA.replace("Ö", "\\\"{Ö}");
+        
+                return muunnosAjaB;
     }
 
 }
