@@ -25,6 +25,7 @@ public class CommandStash {
         commands.put("bibtex", new Bibtex(io, refList));
         commands.put("exit", new Exit(io));
         commands.put("help", new Help(io));
+        commands.put("save", new Save(io, refList));
     }
 
     public Command get(String readFromIO) {
