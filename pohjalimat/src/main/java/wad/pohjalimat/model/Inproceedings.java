@@ -260,7 +260,7 @@ public class Inproceedings {
         if (!address.equals("{NULL}")) {
             optionals = optionals + "Address: \"" + address + "\",\n";
         }
-        if (month > -1) {
+        if (!month.equals("{NULL}")) {
             optionals = optionals + "Month: \"" + month + "\",\n";
         }
         if (!publisher.equals("{NULL}")) {
