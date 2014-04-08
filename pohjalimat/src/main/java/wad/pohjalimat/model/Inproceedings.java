@@ -244,51 +244,51 @@ public class Inproceedings {
 
     public String showEntryInBibTeX() {
         String optionals = "";
-
+        
         if (!editor.equals("{NULL}")) {
-            optionals = optionals + "editor = \"" + editor + "\",\n";
+            optionals = optionals + "Editor: \"" + editor + "\",\n";
         }
         if (volume > -1) {
-            optionals = optionals + "volume = \"" + volume + "\",\n";
+            optionals = optionals + "Volume: \"" + volume + "\",\n";
         }
         if (!series.equals("{NULL}")) {
-            optionals = optionals + "series = \"" + series + "\",\n";
+            optionals = optionals + "Series: \"" + series + "\",\n";
         }
         if (!pages.equals("{NULL}")) {
-            optionals = optionals + "pages = \"" + pages + "\",\n";
+            optionals = optionals + "Pages: \"" + pages + "\",\n";
         }
         if (!address.equals("{NULL}")) {
-            optionals = optionals + "address = \"" + address + "\",\n";
+            optionals = optionals + "Address: \"" + address + "\",\n";
         }
-        if (!month.equals("{NULL}")) {
-            optionals = optionals + "month = \"" + month + "\",\n";
+        if (month > -1) {
+            optionals = optionals + "Month: \"" + month + "\",\n";
         }
         if (!publisher.equals("{NULL}")) {
-            optionals = optionals + "publisher = \"" + publisher + "\",\n";
+            optionals = optionals + "Publisher: \"" + publisher + "\",\n";
         }
         if (!organisation.equals("{NULL}")) {
-            optionals = optionals + "organisation = \"" + organisation + "\",\n";
+            optionals = optionals + "Organisation: \"" + organisation + "\",\n";
         }
         if (!note.equals("{NULL}")) {
-            optionals = optionals + "note = \"" + note + "\",\n";
+            optionals = optionals + "Note: \"" + note + "\",\n";
         }
         if (!key.equals("{NULL}")) {
-            optionals = optionals + "key = \"" + key + "\",\n";
+            optionals = optionals + "Key: \"" + key + "\",\n";
         }
-
-        return "@INPROCEEDINGS{" + masterKey + ",\n"
-                + "author = \"" + author + "\",\n"
-                + "title = \"" + title + "\",\n"
-                + "booktitle = \"" + booktitle + "\",\n"
-                + "year = \"" + year + "\",\n"
-                + optionals + "}";
-                
-                String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
-                String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
-                String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
-                String muunnosAjaB = muunnosA.replace("Ö", "\\\"{Ö}");
         
-                return muunnosAjaB;
+        String raakamuoto = "@INPROCEEDINGS{" + masterKey +",\n" +
+                "author = \"" + author + "\",\n"  +
+                "title = \"" + title + "\",\n"  +
+                "booktitle = \"" + booktitle + "\",\n"  +
+                "year = \"" + year + "\",\n"  +
+                optionals + "}";
+        
+        String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
+        String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
+        String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
+        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{Ö}");
+        
+        return muunnosAjaB;
     }
 
 }
