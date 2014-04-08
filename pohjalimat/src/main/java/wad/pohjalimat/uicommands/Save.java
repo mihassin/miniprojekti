@@ -23,7 +23,7 @@ public class Save implements Command {
 
     @Override
     public void run() {
-        String fileName = "filename";
+        String fileName = io.read("File name (automatic .bib extension): ");
         try {
             this.writer = new PrintWriter(fileName + ".bib");
         } catch (FileNotFoundException ex) {
