@@ -21,6 +21,7 @@ public class Help implements Command {
         io.write("addentry - add an inproceedings BibTex entry");
         io.write("print    - print a list of added content");
         io.write("bibtex   - print a list of added content in BibTex format");
+        io.write("help     - this little manual");
         io.write("exit     - quit the program");
     }
 }
