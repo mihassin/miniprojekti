@@ -23,7 +23,7 @@ public class Addentry implements Command {
         try {
             try {
                 refList.add(Inproceedings.create(
-                        io.read("Reference key: "),
+                        checkMasterKeyUniqueness(io.read("Reference key: ")),
                         io.read("author: "),
                         io.read("title: "),
                         io.read("booktitle: "),
@@ -37,4 +37,34 @@ public class Addentry implements Command {
             io.write("Invalid entry");
         }
     }
+
+    /**
+     * Checks for known duplicates for given masterKey and if one is found,
+     * returns the same key with an unique index number. Example: "masterKey" is
+     * found --> returns "masterKey__1", "masterKey__1" is found --> returns
+     * "masterKey__2".
+     *
+     * @param masterKey bibTex cite key that is checked for duplicates
+     * @return unique masterKey
+     */
+    private String checkMasterKeyUniqueness(String masterKey) {
+        int keyDuplicateIndex = 1;
+        boolean theSearchIsOn = true;
+        String dupeKey = masterKey;
+
+        while (theSearchIsOn) {
+            theSearchIsOn = false;
+            for (Inproceedings ref : refList) {
+                if (ref.getMasterKey().equals(dupeKey)) {
+                    // duplicate key is found from previous entries
+                    dupeKey = masterKey + "__" + keyDuplicateIndex;
+                    keyDuplicateIndex++;
+                    theSearchIsOn = true;
+                    // search for a duplicate for the indexed key
+                }
+            }
+        }
+        return dupeKey;
+    }
+
 }
