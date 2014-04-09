@@ -1,5 +1,8 @@
 irc: #ohtu2014limat
 
+11.4. klo: 12:40 C221
+=====================
+
 backlogit:
 https://docs.google.com/spreadsheet/ccc?key=0AqogwfYeUFLTdHVFZ3d1ckRGazhGcExaeThZZkhRT0E&usp=sharing
 
