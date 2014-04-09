@@ -286,7 +286,7 @@ public class Inproceedings {
         String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
         String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
         String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
-        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{Ö}");
+        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{O}");
         
         return muunnosAjaB;
     }
