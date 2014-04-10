@@ -17,6 +17,11 @@ public class ArticleTest {
         assertEquals(a, Article.create("key", "marko", "otsikko", "journal", 1234));
     }
     
+    @Test(expected=IllegalArgumentException.class)
+    public void improperCreate() {
+        Article.create("", "", "", "", -1001);
+    }
+    
     @Test
     public void getNSetJournal() {
         a.setJournal("uusi");
@@ -77,11 +82,43 @@ public class ArticleTest {
         assertEquals("may", a.getBooktitle());
     }
     
+    @Test
+    public void wontEqNull() {
+        assertFalse(a.equals(null));
+    }
+    
+    @Test
+    public void wontEqWithSomethingThatItsNot() {
+        assertFalse(a.equals(Object.class));
+    }
+    
+    @Test
+    public void wontEqWithFalseNumber() {
+        Article b = new Article("key", "marko", "otsikko", "journal", 1234);
+        a.setNumber(1);
+        b.setNumber(2);
+        assertFalse(a.equals(b));
+    }
+    
+    @Test
+    public void wontEqWithFalseJurnalli() {
+        Article b = new Article("key", "marko", "otsikko", "journal", 1234);
+        b.setJournal("moi");
+        assertFalse(a.equals(b));
+    }
+    
+    @Test
+    public void getHash() {
+        int hash = a.hashCode();
+        assertEquals(hash, a.hashCode());
+    }
+    
     //todo
     @Test
     public void articleToString() {
     }
     
+    //todo
     @Test
     public void printBibtext() {
     }
