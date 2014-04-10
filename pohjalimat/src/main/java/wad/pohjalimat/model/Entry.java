@@ -45,7 +45,7 @@ public abstract class Entry {
     public abstract int hashCode();
     
         protected String EditorToString() {
-            return (editor!=null) ? "Editor: " + editor + "\n" : "";
+            return (isNotNullOrEmpty(editor)) ? "Editor: " + editor + "\n" : "";
         }
         
         protected String VolumeToString() {
@@ -53,43 +53,43 @@ public abstract class Entry {
         }
         
         protected String SeriesToString() {
-            return (series!=null) ? "Series: " + series + "\n" : "";
+            return (isNotNullOrEmpty(series)) ? "Series: " + series + "\n" : "";
         }
         
         protected String PagesToString() {
-            return (pages!=null) ? "Pages: " + pages + "\n" : "";
+            return (isNotNullOrEmpty(pages)) ? "Pages: " + pages + "\n" : "";
         }
         
         protected String AddressToString() {
-            return (address!=null) ? "Address: " + address + "\n" : "";
+            return (isNotNullOrEmpty(address)) ? "Address: " + address + "\n" : "";
         }
         
         protected String MonthToString() {
-            return (month!=null) ? "Month: " + month + "\n" : "";
+            return (isNotNullOrEmpty(month)) ? "Month: " + month + "\n" : "";
         }
         
         protected String PublisherToString() {
-            return (publisher!=null) ? "Publisher: " + publisher + "\n" : "";
+            return (isNotNullOrEmpty(publisher)) ? "Publisher: " + publisher + "\n" : "";
         }
         
         protected String OrganisationToString() {
-            return (organisation!=null) ? "Organisation: " + organisation + "\n" : "";
+            return (isNotNullOrEmpty(organisation)) ? "Organisation: " + organisation + "\n" : "";
         }
         
         protected String NoteToString() {
-            return (note!=null) ? "Note: " + note + "\n" : "";
+            return (isNotNullOrEmpty(note)) ? "Note: " + note + "\n" : "";
         }
         
         protected String KeyToString() {
-            return (key!=null) ? "Key: " + key + "\n" : "";
+            return (isNotNullOrEmpty(key)) ? "Key: " + key + "\n" : "";
         }
         
         protected String AuthorToString() {
-            return (author!=null) ? "Author: " + author + "\n" : "";
+            return (isNotNullOrEmpty(author)) ? "Author: " + author + "\n" : "";
         }
         
         protected String TitleToString() {
-            return (title!=null) ? "Title: " + title + "\n" : "";
+            return (isNotNullOrEmpty(title)) ? "Title: " + title + "\n" : "";
         }
         
         protected String YearToString() {
@@ -97,11 +97,15 @@ public abstract class Entry {
         }
         
         protected String EditionToString() {
-            return (edition!=null) ? "Edition: " + edition + "\n" : "";
+            return (isNotNullOrEmpty(edition)) ? "Edition: " + edition + "\n" : "";
         }
 
     public String getMasterKey() {
         return masterKey;
+    }
+    
+    private boolean isNotNullOrEmpty(String value) {
+        return value!=null && !value.isEmpty();
     }
         
         
