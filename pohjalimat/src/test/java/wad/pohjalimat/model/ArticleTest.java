@@ -219,4 +219,29 @@ public class ArticleTest {
         assertEquals(a, b);
     }
     
+    @Test
+    public void wontEqNull() {
+        assertFalse(a.equals(null));
+    }
+    
+    @Test
+    public void wontEqWithSomethingThatItsNot() {
+        assertFalse(a.equals(Object.class));
+    }
+    
+    @Test
+    public void wontEqWithFalseNumber() {
+        Article b = new Article("key", "marko", "otsikko", "journal", 1234);
+        a.setNumber(1);
+        b.setNumber(2);
+        assertFalse(a.equals(b));
+    }
+    
+    @Test
+    public void wontEqWithFalseJurnalli() {
+        Article b = new Article("key", "marko", "otsikko", "journal", 1234);
+        b.setJournal("moi");
+        assertFalse(a.equals(b));
+    }
+    
 }
