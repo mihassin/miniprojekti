@@ -177,25 +177,25 @@ public class Book extends Entry {
         if (volume>0) {
             optionals = optionals + "volume = " + volume + ",\n";
         }
-        if (series!=null) {
+        if (series!=null && !series.isEmpty()) {
             optionals = optionals + "series = \"" + series + "\",\n";
         }
-        if (address!=null) {
+        if (address!=null && !address.isEmpty()) {
             optionals = optionals + "address = " + address + ",\n";
         }
-        if(edition!=null) {
+        if(edition!=null && !edition.isEmpty()) {
             optionals = optionals + "edition = " + edition + ",\n";
         }
-        if(month!=null) {
+        if(month!=null && !month.isEmpty()) {
             optionals = optionals + "month = " + address + ",\n";
         }
         
         
-        if (note!=null) {
+        if (note!=null && !note.isEmpty()) {
             optionals = optionals + "note = \"" + note + "\",\n";
         }
         
-        if (key!=null) {
+        if (key!=null && !key.isEmpty()) {
             optionals = optionals + "isbn = \"" + key + "\",\n";
         }
         String raakamuoto = "@BOOK{" + masterKey +",\n" +
