@@ -95,7 +95,7 @@ public class BookTest {
         assertEquals(newValue, book2.getYear());
     }
 
-    // volume/number, series, address, edition, month, note, key
+    
     @Test
     public void getNSetVolume() {
         int newValue = 1;
