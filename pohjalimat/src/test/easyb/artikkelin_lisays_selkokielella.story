@@ -4,11 +4,11 @@ import wad.pohjalimat.io.*
 import wad.pohjalimat.model.*
 import wad.pohjalimat.uicommands.*
 
-description 'Käyttäjänä pystyn lisäämään Article-tyyppisen viitteen selkokielellä'
+description 'Käyttäjänä pystyn lisäämään Book-tyyppisen viitteen selkokielellä'
 
 scenario "käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla", {
-    given 'komento addarticle valittu', {
-        io = new StubIO("addarticle", "refKey", "ransum", "Master's thesis", "sinep", "2015", "12", "1-20", "5", "korvakatu 1", "2", "exit")
+    given 'komento addentry valittu', {
+        io = new StubIO("addbook", "refKey", "ransum", "Master's thesis", "sinep", "2015", "12", "komeron kovikset", "asd", "korvakatu 1", "black edition", "may", "this is a note", "exit")
          textui = new TextUI(io)
     }
     when 'oikean muotoiset viitteen tiedot syötetään', {
