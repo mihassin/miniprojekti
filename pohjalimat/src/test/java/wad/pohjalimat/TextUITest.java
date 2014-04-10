@@ -6,44 +6,35 @@
 
 package wad.pohjalimat;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import java.util.Scanner;
+import org.junit.*;
 import static org.junit.Assert.*;
+import wad.pohjalimat.io.*;
+import wad.pohjalimat.uicommands.CommandStash;
 
 /**
  *
- * @author Juhani Heliö
+ * @author Juhani Heliö, lima-marko contributed
  */
 public class TextUITest {
+    
+    TextUI tu;
+    CommandStash commands;
     
     public TextUITest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of start method, of class TextUI.
-     */
     @Test
     public void testStart() {
+    }
+    
+    @Test
+    public void testCommandStash() { //slime-marko
+        ConsoleIO io = new ConsoleIO(new Scanner(System.in));
+        tu = new TextUI(io);
+        commands = tu.getCommandStash();
         
+        assertEquals(commands, tu.getCommandStash());
     }
     
 }
