@@ -65,6 +65,13 @@
             <scope>test</scope>
         </dependency>
         
+        <dependency>
+            <groupId>org.easyb</groupId>
+            <artifactId>easyb-core</artifactId>
+            <version>1.4</version>
+            <scope>test</scope>
+        </dependency>
+        
         <!-- test -->
         
         <dependency>
