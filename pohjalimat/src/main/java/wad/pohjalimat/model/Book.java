@@ -139,13 +139,13 @@ public class Book extends Entry {
             return false;
         }
         final Book other = (Book) obj;
-        if (!this.author.equals(other.author)) {
+        if (this.author.equals(other.author)) {
             return false;
         }
-        if (!this.title.equals(other.title)) {
+        if (this.title.equals(other.title)) {
             return false;
         }
-        if (!this.publisher.equals(other.publisher)) {
+        if (this.publisher.equals(other.publisher)) {
             return false;
         }
         if (this.year != other.year) {
@@ -155,8 +155,8 @@ public class Book extends Entry {
     }
     @Override
     public String toString() {
-        return "*** " + AuthorToString()
-                + TitleToString()
+        return "*** " + title + " ***\n"
+                + AuthorToString()
                 + PublisherToString()
                 + YearToString()
                 + VolumeToString()
@@ -174,33 +174,36 @@ public class Book extends Entry {
    public String showEntryInBibTeX() {
                String optionals = "";
         
-        if (volume>=0) {
-            optionals = optionals + ",\nnumber = " + volume + ",\n";
+        if (volume>0) {
+            optionals = optionals + "volume = " + volume + ",\n";
         }
-        if (!series.isEmpty()) {
+        if (series!=null) {
             optionals = optionals + "series = \"" + series + "\",\n";
         }
-        if (!address.isEmpty()) {
+        if (address!=null) {
             optionals = optionals + "address = " + address + ",\n";
         }
-        if(!edition.isEmpty()) {
+        if(edition!=null) {
             optionals = optionals + "edition = " + edition + ",\n";
         }
-        if(!month.isEmpty()) {
+        if(month!=null) {
             optionals = optionals + "month = " + address + ",\n";
         }
         
         
-        if (!note.isEmpty()) {
+        if (note!=null) {
             optionals = optionals + "note = \"" + note + "\",\n";
         }
         
-        String raakamuoto = "@ARTICLE{" + masterKey +",\n" +
+        if (key!=null) {
+            optionals = optionals + "isbn = \"" + key + "\",\n";
+        }
+        String raakamuoto = "@BOOK{" + masterKey +",\n" +
                 "author = \"" + author + "\",\n"  +
                 "title = \"" + title + "\",\n"  +
                 "publisher = \"" + publisher + "\",\n"  +
-                "year = " + year + ""  +
-                optionals + "\n}";
+                "year = " + year + ",\n"  +
+                optionals + "}";
         
         String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
         String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
