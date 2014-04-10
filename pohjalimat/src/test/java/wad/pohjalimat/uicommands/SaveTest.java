@@ -34,6 +34,6 @@ public class SaveTest {
 
     @Test
     public void writesAllEntriesToFile() {    
-        // todo
+        testSave.run();
     }
 }
