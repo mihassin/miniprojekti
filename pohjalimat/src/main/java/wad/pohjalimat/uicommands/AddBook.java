@@ -31,7 +31,9 @@ public class AddBook implements Command{
                 
                 // volume/number, series, address, edition, month, note, key
                 io.write("Optional information(can be empty):");
-                b.setVolume(Integer.parseInt(io.read("Volume: ")));
+                String vol = io.read("Volume: ");
+                if(!vol.isEmpty())
+                    b.setVolume(Integer.parseInt(vol));
                 b.setSeries(io.read("Series: "));
                 b.setAddress(io.read("Address: "));
                 b.setEdition(io.read("Edition: "));
