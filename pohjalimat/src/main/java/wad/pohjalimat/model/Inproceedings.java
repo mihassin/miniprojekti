@@ -4,25 +4,7 @@ package wad.pohjalimat.model;
  *
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
  */
-public class Inproceedings {
-
-    String masterKey;
-    String author;
-    String title;
-    String booktitle;
-    int year;
-
-    // valinnaiset
-    String editor;
-    int volume;
-    String series;
-    String pages;
-    String address;
-    String month;
-    String organisation;
-    String publisher;
-    String note;
-    String key;
+public class Inproceedings extends Entry{
 
     public static Inproceedings create(String masterKey, String author, String title, String booktitle, int year) {
         if(masterKey.isEmpty() || author.isEmpty() || title.isEmpty() || booktitle.isEmpty()) throw new NullPointerException();
