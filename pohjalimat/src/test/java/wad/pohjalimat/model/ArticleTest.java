@@ -189,12 +189,12 @@ public class ArticleTest {
                 + "author = \"test2\",\n"
                 + "title = \"test2\",\n"
                 + "journal = \"test2\",\n"
-                + "year = 2001,\n"
-                + "number = 1,\n"
+                + "year = \"2001\",\n"
+                + "number = \"1\",\n"
                 + "pages = \"{200-300}\",\n"
-                + "month = 1,\n"
+                + "month = \"1\",\n"
                 + "note = \"test2\",\n"
-                + "volume = 1\n"
+                + "volume = \"1\"\n"
                 + "}";
         assertEquals(a.showEntryInBibTeX(), apu);
     }
@@ -206,7 +206,7 @@ public class ArticleTest {
                 + "author = \"test2\",\n"
                 + "title = \"test2\",\n"
                 + "journal = \"test2\",\n"
-                + "year = 2001"
+                + "year = \"2001\""
                 + "\n}";
         assertEquals(apu, a.showEntryInBibTeX());
     }
