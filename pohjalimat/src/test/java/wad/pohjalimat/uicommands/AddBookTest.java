@@ -54,6 +54,24 @@ public class AddBookTest {
         assertTrue(testIO.getOutput().contains("Invalid entry"));
     }
         
+                @Test
+    public void addingANewEntryWithInvalidInput3() {
+        testIO = new StubIO("aaafs", "", "work", "publisher", "-1", "2", "b", "a", "b", "a", "b", "a");
+        testAddBook = new AddBook(testIO, testRefList);
+        testAddBook.run();
+
+        assertTrue(testIO.getOutput().contains("Invalid entry"));
+    }
+                
+                                @Test
+    public void addingANewEntryWithInvalidInput4() {
+        testIO = new StubIO("aaafs", "", "work", "publisher", "hess", "2", "b", "a", "b", "a", "b", "a");
+        testAddBook = new AddBook(testIO, testRefList);
+        testAddBook.run();
+
+        assertTrue(testIO.getOutput().contains("Invalid entry"));
+    }
+        
             @Test
     public void addingANewEntryWithDuplicateMasterKeyIsHandled () {
         testIO = new StubIO("masterkey", "writerguy", "work", "work list", "2014", "2", "b", "a", "b", "a", "b", "a");
