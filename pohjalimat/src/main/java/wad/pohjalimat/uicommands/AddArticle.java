@@ -42,7 +42,7 @@ public class AddArticle implements Command{
                 a.setPages(io.read("Pages: "));
                 a.setMonthNumeric(Integer.parseInt("Month (1-12): "));
                 a.setNote(io.read("Note: "));
-                a.setVolume(Integer.parseInt(io.read("Voluma: ")));
+                a.setVolume(Integer.parseInt(io.read("Volume: ")));
             } catch (NullPointerException e) {
                 io.write("");
                 io.write("Invalid entry");
