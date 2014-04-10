@@ -181,10 +181,10 @@ public class Book extends Entry {
             optionals = optionals + "series = \"" + series + "\",\n";
         }
         if (address!=null && !address.isEmpty()) {
-            optionals = optionals + "address = " + address + ",\n";
+            optionals = optionals + "address = \"" + address + "\",\n";
         }
         if(edition!=null && !edition.isEmpty()) {
-            optionals = optionals + "edition = " + edition + ",\n";
+            optionals = optionals + "edition = \"" + edition + "\",\n";
         }
         if(month!=null && !month.isEmpty()) {
             optionals = optionals + "month = " + address + ",\n";
