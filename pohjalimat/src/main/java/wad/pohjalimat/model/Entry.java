@@ -36,7 +36,6 @@ public abstract class Entry {
     @Override
     public abstract String toString();
     
-    
     public abstract String showEntryInBibTeX();
     
     @Override
@@ -84,6 +83,23 @@ public abstract class Entry {
         protected String KeyToString() {
             return (key.isEmpty()) ? "Key: " + key + "\n" : "";
         }
+        
+        protected String AuthorToString() {
+            return (author.isEmpty()) ? "Author: " + author + "\n" : "";
+        }
+        
+        protected String TitleToString() {
+            return (title.isEmpty()) ? "Title: " + title + "\n" : "";
+        }
+        
+        protected String YearToString() {
+            return "Year: " + year + "\n";
+        }
+        
+        protected String EditionToString() {
+            return (edition.isEmpty()) ? "Edition: " + edition + "\n" : "";
+        }
+        
         
    
     

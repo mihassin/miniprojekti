@@ -153,15 +153,61 @@ public class Book extends Entry {
         }
         return true;
     }
-
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "*** " + AuthorToString()
+                + TitleToString()
+                + PublisherToString()
+                + YearToString()
+                + VolumeToString()
+                + SeriesToString()
+                + AddressToString()
+                + EditionToString()
+                + MonthToString()
+                + NoteToString()
+                + KeyToString(); 
     }
+    
+    // volume/number, series, address, edition, month, note, key
 
    @Override
    public String showEntryInBibTeX() {
-       return "";
+               String optionals = "";
+        
+        if (volume>=0) {
+            optionals = optionals + ",\nnumber = " + volume + ",\n";
+        }
+        if (!series.isEmpty()) {
+            optionals = optionals + "series = \"" + series + "\",\n";
+        }
+        if (!address.isEmpty()) {
+            optionals = optionals + "address = " + address + ",\n";
+        }
+        if(!edition.isEmpty()) {
+            optionals = optionals + "edition = " + edition + ",\n";
+        }
+        if(!month.isEmpty()) {
+            optionals = optionals + "month = " + address + ",\n";
+        }
+        
+        
+        if (!note.isEmpty()) {
+            optionals = optionals + "note = \"" + note + "\",\n";
+        }
+        
+        String raakamuoto = "@ARTICLE{" + masterKey +",\n" +
+                "author = \"" + author + "\",\n"  +
+                "title = \"" + title + "\",\n"  +
+                "publisher = \"" + publisher + "\",\n"  +
+                "year = " + year + ""  +
+                optionals + "\n}";
+        
+        String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
+        String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
+        String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
+        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{O}");
+        
+        return muunnosAjaB;
    }
    
     
