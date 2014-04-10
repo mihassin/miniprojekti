@@ -10,9 +10,9 @@ import wad.pohjalimat.model.Book;
 public class AddBook implements Command{
 
     IO io;
-    ArrayList<Article> refList;
+    ArrayList<Book> refList;
 
-    public AddBook(IO io, ArrayList<Article> refList) {
+    public AddBook(IO io, ArrayList<Book> refList) {
         this.io = io;
         this.refList = refList;
     }
@@ -24,10 +24,10 @@ public class AddBook implements Command{
                 io.write("Compulsory information:");
                 Book b=Book.create(
                         checkMasterKeyUniqueness(io.read("Reference key: ")),
-                        io.read("author: "),
-                        io.read("title: "),
-                        io.read("journal: "),
-                        Integer.parseInt(io.read("year: ")));
+                        io.read("Author: "),
+                        io.read("Title: "),
+                        io.read("Publisher: "),
+                        Integer.parseInt(io.read("Year: ")));
                 
                 // volume/number, series, address, edition, month, note, key
                 io.write("Optional information(can be empty):");
@@ -38,7 +38,9 @@ public class AddBook implements Command{
                 b.setMonth(io.read("Month: "));
                 b.setNote(io.read("Note: "));
                 b.setKey(io.read("ISBN: "));
-            } catch (NullPointerException e) {
+                
+                refList.add(b);
+            } catch (IllegalArgumentException e) {
                 io.write("");
                 io.write("Invalid entry");
             }
@@ -46,6 +48,7 @@ public class AddBook implements Command{
             io.write("");
             io.write("Invalid entry");
         }
+        
     }
 
     /**
@@ -64,7 +67,7 @@ public class AddBook implements Command{
 
         while (theSearchIsOn) {
             theSearchIsOn = false;
-            for (Article ref : refList) {
+            for (Book ref : refList) {
                 if (ref.getMasterKey().equals(dupeKey)) {
                     // duplicate key is found from previous entries
                     dupeKey = masterKey + "__" + keyDuplicateIndex;
