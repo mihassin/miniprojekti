@@ -149,7 +149,7 @@ public class ArticleTest {
         assertEquals(a.getTitle(), "test1");
     }
 
-    /**
+        /**
      * Test of toString method, of class Article.
      */
     @Test
@@ -166,6 +166,16 @@ public class ArticleTest {
                 + "Volume: 1\n";
         assertEquals(a.toString(), apu);
         
+    }
+    
+    @Test
+    public void testToStringPieni() {
+        dummyarvotPieni();
+        String apu="*** test2 ***\n"
+                + "Author: test2\n"
+                + "Journal: test2\n"
+                + "Year published: 2001\n";
+        assertEquals(apu, a.toString());
     }
 
     /**
@@ -188,6 +198,18 @@ public class ArticleTest {
                 + "}";
         assertEquals(a.showEntryInBibTeX(), apu);
     }
+    
+    @Test
+    public void testShowEntryInBibTeXPieni() {
+        dummyarvotPieni();
+        String apu="@ARTICLE{b2,\n"
+                + "author = \"test2\",\n"
+                + "title = \"test2\",\n"
+                + "journal = \"test2\",\n"
+                + "year = 2001"
+                + "\n}";
+        assertEquals(apu, a.showEntryInBibTeX());
+    }
 
     private void dummyarvot(){
         a.setMasterKey("b2");
@@ -200,6 +222,19 @@ public class ArticleTest {
         a.setMonth("test2");
         a.setNote("test2");
         a.setVolume(1);
+    }
+    
+    private void dummyarvotPieni(){
+        a.setMasterKey("b2");
+        a.setAuthor("test2");
+        a.setTitle("test2");
+        a.setJournal("test2");
+        a.setYear(2001);
+        a.setNumber(-10000);
+        a.setPages(null);
+        a.setMonth(null);
+        a.setNote(null);
+        a.setVolume(-100000);
     }
     
     /**
