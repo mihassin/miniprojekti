@@ -3,16 +3,16 @@ package wad.pohjalimat.uicommands;
 
 import java.util.ArrayList;
 import wad.pohjalimat.io.IO;
-import wad.pohjalimat.model.Article;
 import wad.pohjalimat.model.Book;
+import wad.pohjalimat.model.Entry;
 
 
 public class AddBook implements Command{
 
     IO io;
-    ArrayList<Book> refList;
+    ArrayList<Entry> refList;
 
-    public AddBook(IO io, ArrayList<Book> refList) {
+    public AddBook(IO io, ArrayList<Entry> refList) {
         this.io = io;
         this.refList = refList;
     }
@@ -67,7 +67,7 @@ public class AddBook implements Command{
 
         while (theSearchIsOn) {
             theSearchIsOn = false;
-            for (Book ref : refList) {
+            for (Entry ref : refList) {
                 if (ref.getMasterKey().equals(dupeKey)) {
                     // duplicate key is found from previous entries
                     dupeKey = masterKey + "__" + keyDuplicateIndex;

@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import wad.pohjalimat.io.IO;
 import wad.pohjalimat.io.StubIO;
 import wad.pohjalimat.model.Book;
-import wad.pohjalimat.model.Inproceedings;
+import wad.pohjalimat.model.Entry;
 
 /**
  *
@@ -15,7 +14,7 @@ import wad.pohjalimat.model.Inproceedings;
  */
 public class AddBookTest {
 
-    ArrayList<Book> testRefList;
+    ArrayList<Entry> testRefList;
     StubIO testIO;
     Book testBook;
     AddBook testAddBook;
@@ -23,7 +22,7 @@ public class AddBookTest {
     @Before
     public void setUp() {
         testIO = new StubIO();
-        testRefList = new ArrayList<Book>();
+        testRefList = new ArrayList<Entry>();
         testAddBook = new AddBook(testIO, testRefList);
     }
 

@@ -99,6 +99,10 @@ public abstract class Entry {
         protected String EditionToString() {
             return (edition!=null) ? "Edition: " + edition + "\n" : "";
         }
+
+    public String getMasterKey() {
+        return masterKey;
+    }
         
         
    

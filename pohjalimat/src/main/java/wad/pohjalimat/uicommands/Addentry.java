@@ -2,6 +2,7 @@ package wad.pohjalimat.uicommands;
 
 import java.util.ArrayList;
 import wad.pohjalimat.io.IO;
+import wad.pohjalimat.model.Entry;
 import wad.pohjalimat.model.Inproceedings;
 
 /**
@@ -11,9 +12,9 @@ import wad.pohjalimat.model.Inproceedings;
 public class Addentry implements Command {
 
     IO io;
-    ArrayList<Inproceedings> refList;
+    ArrayList<Entry> refList;
 
-    public Addentry(IO io, ArrayList<Inproceedings> refList) {
+    public Addentry(IO io, ArrayList<Entry> refList) {
         this.io = io;
         this.refList = refList;
     }
@@ -54,7 +55,7 @@ public class Addentry implements Command {
 
         while (theSearchIsOn) {
             theSearchIsOn = false;
-            for (Inproceedings ref : refList) {
+            for (Entry ref : refList) {
                 if (ref.getMasterKey().equals(dupeKey)) {
                     // duplicate key is found from previous entries
                     dupeKey = masterKey + "__" + keyDuplicateIndex;

@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import wad.pohjalimat.io.StubIO;
+import wad.pohjalimat.model.Entry;
 import wad.pohjalimat.model.Inproceedings;
 
 /**
@@ -13,7 +14,7 @@ import wad.pohjalimat.model.Inproceedings;
  */
 public class BibtexTest {
               
-    ArrayList<Inproceedings> testRefList;
+    ArrayList<Entry> testRefList;
     StubIO testIO;
     Inproceedings testInproceedings;
     Bibtex testBibtex;
@@ -24,7 +25,7 @@ public class BibtexTest {
     @Before
     public void setUp() {
         testIO = new StubIO();
-        testRefList = new ArrayList<Inproceedings>();
+        testRefList = new ArrayList<Entry>();
         testBibtex = new Bibtex(testIO, testRefList);
         testInproceedings = Inproceedings.create("masterKey", "writer guy", "sell & buy", "best open source gui", 2014);
         testRefList.add(testInproceedings);

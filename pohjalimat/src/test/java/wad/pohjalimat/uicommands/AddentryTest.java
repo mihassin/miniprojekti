@@ -1,14 +1,11 @@
 package wad.pohjalimat.uicommands;
 
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import wad.pohjalimat.io.IO;
 import wad.pohjalimat.io.StubIO;
+import wad.pohjalimat.model.Entry;
 import wad.pohjalimat.model.Inproceedings;
 
 /**
@@ -17,7 +14,7 @@ import wad.pohjalimat.model.Inproceedings;
  */
 public class AddentryTest {
             
-    ArrayList<Inproceedings> testRefList;
+    ArrayList<Entry> testRefList;
     StubIO testIO;
     Inproceedings testInproceedings;
     Addentry testAddentry;
@@ -28,7 +25,7 @@ public class AddentryTest {
     @Before
     public void setUp() {
         testIO = new StubIO();
-        testRefList = new ArrayList<Inproceedings>();
+        testRefList = new ArrayList<Entry>();
         testAddentry = new Addentry(testIO, testRefList);
     }
 

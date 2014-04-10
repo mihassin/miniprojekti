@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import wad.pohjalimat.io.StubIO;
+import wad.pohjalimat.model.Entry;
 import wad.pohjalimat.model.Inproceedings;
 
 /**
@@ -13,7 +14,7 @@ import wad.pohjalimat.model.Inproceedings;
  */
 public class PrintTest {
     
-    ArrayList<Inproceedings> testRefList;
+    ArrayList<Entry> testRefList;
     StubIO testIO;
     Inproceedings testInproceedings;
     Print testPrint;
@@ -24,7 +25,7 @@ public class PrintTest {
     @Before
     public void setUp() {
         testIO = new StubIO();
-        testRefList = new ArrayList<Inproceedings>();
+        testRefList = new ArrayList<Entry>();
         testPrint = new Print(testIO, testRefList);
         testInproceedings = Inproceedings.create("masterKey", "writer guy", "sell & buy", "best open source gui", 2014);
         testRefList.add(testInproceedings);

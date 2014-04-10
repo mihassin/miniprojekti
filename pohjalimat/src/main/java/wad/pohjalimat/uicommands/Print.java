@@ -2,7 +2,7 @@ package wad.pohjalimat.uicommands;
 
 import java.util.ArrayList;
 import wad.pohjalimat.io.IO;
-import wad.pohjalimat.model.Inproceedings;
+import wad.pohjalimat.model.Entry;
 
 /**
  *
@@ -11,16 +11,16 @@ import wad.pohjalimat.model.Inproceedings;
 public class Print implements Command {
 
     IO io;
-    ArrayList<Inproceedings> refList;
+    ArrayList<Entry> refList;
 
-    public Print(IO io, ArrayList<Inproceedings> refList) {
+    public Print(IO io, ArrayList<Entry> refList) {
         this.io = io;
         this.refList = refList;
     }
 
     @Override
     public void run() {
-        for (Inproceedings inproceedings : refList) {
+        for (Entry inproceedings : refList) {
             io.write(inproceedings.toString());
         }
     }

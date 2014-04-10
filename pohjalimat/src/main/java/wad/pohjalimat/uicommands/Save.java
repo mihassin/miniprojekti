@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import wad.pohjalimat.io.IO;
-import wad.pohjalimat.model.Inproceedings;
+import wad.pohjalimat.model.Entry;
 
 /**
  *
@@ -14,9 +14,9 @@ public class Save implements Command {
 
     PrintWriter writer;
     IO io;
-    ArrayList<Inproceedings> refList;
+    ArrayList<Entry> refList;
 
-    public Save(IO io, ArrayList<Inproceedings> refList) {
+    public Save(IO io, ArrayList<Entry> refList) {
         this.io = io;
         this.refList = refList;
     }
@@ -29,7 +29,7 @@ public class Save implements Command {
         } catch (FileNotFoundException ex) {
             io.write("error with .bib creation");
         }
-        for (Inproceedings inproceedings : refList) {
+        for (Entry inproceedings : refList) {
             writer.println(inproceedings.showEntryInBibTeX());
         }
         writer.close();

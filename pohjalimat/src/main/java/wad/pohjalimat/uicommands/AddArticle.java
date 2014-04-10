@@ -9,7 +9,7 @@ package wad.pohjalimat.uicommands;
 import java.util.ArrayList;
 import wad.pohjalimat.io.IO;
 import wad.pohjalimat.model.Article;
-import wad.pohjalimat.model.Inproceedings;
+import wad.pohjalimat.model.Entry;
 
 /**
  *
@@ -18,9 +18,9 @@ import wad.pohjalimat.model.Inproceedings;
 public class AddArticle implements Command{
 
     IO io;
-    ArrayList<Article> refList;
+    ArrayList<Entry> refList;
 
-    public AddArticle(IO io, ArrayList<Article> refList) {
+    public AddArticle(IO io, ArrayList<Entry> refList) {
         this.io = io;
         this.refList = refList;
     }
@@ -69,7 +69,7 @@ public class AddArticle implements Command{
 
         while (theSearchIsOn) {
             theSearchIsOn = false;
-            for (Article ref : refList) {
+            for (Entry ref : refList) {
                 if (ref.getMasterKey().equals(dupeKey)) {
                     // duplicate key is found from previous entries
                     dupeKey = masterKey + "__" + keyDuplicateIndex;
