@@ -23,12 +23,31 @@ public class Addentry implements Command {
     public void run() {
         try {
             try {
-                refList.add(Inproceedings.create(
+                io.write("Compulsory information:");
+                Inproceedings i = Inproceedings.create(
                         checkMasterKeyUniqueness(io.read("Reference key: ")),
                         io.read("author: "),
                         io.read("title: "),
                         io.read("booktitle: "),
-                        Integer.parseInt(io.read("year: "))));
+                        Integer.parseInt(io.read("year: ")));
+
+                // editor, volume/number, series, address, month, publisher, organisation, note, key
+                io.write("Optional information(can be empty):");
+                i.setEditor(io.read("Editor: "));
+                String vol = io.read("Volume: ");
+                if (!vol.isEmpty()) {
+                    i.setVolume(Integer.parseInt(vol));
+                }
+                i.setSeries(io.read("Series: "));
+                i.setPages(io.read("Pages: "));
+                i.setAddress(io.read("Address: "));
+                i.setMonth(io.read("Month: "));
+                i.setPublisher(io.read("Publisher: "));
+                i.setOrganisation(io.read("Organisation: "));
+                i.setNote(io.read("Note: "));
+                i.setKey(io.read("ISBN: "));
+
+                refList.add(i);
             } catch (NullPointerException e) {
                 io.write("");
                 io.write("Invalid entry");

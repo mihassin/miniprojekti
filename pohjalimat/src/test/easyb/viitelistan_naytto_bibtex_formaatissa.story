@@ -8,13 +8,13 @@ description 'Käyttäjänä pystyn näyttämään listan viitteistä BibTex-form
 
 scenario "käyttäjä voi listata tallennetut viitteet BibTex-formaatin tiedoilla", {
     given 'komento bibtex valittu', {
-        io = new StubIO("addentry", "refKey", "ransum", "Masters thesis", "sinep", "2015", "bibtex", "exit")
+        io = new StubIO("addentry", "refKey", "ransum", "Master's thesis", "sinep", "2015", "editor", "3", "series", "10--20", "address", "month", "publisher", "organisation", "note", "isbn4000-232", "bibtex", "exit")
         textui = new TextUI(io)
     }
     when 'käyttäjä haluaa nähdä  tiedot viitteistä BibTex-formaatissa', {
-         textui.start()
+        textui.start()
     }
     then 'ohjelma tulostaa tallessa olevat viitteet BibTex-formaatin tiedoilla', {
-       io.getOutput().shouldHave("@INPROCEEDINGS{refKey,")
+        io.getOutput().shouldHave("@INPROCEEDINGS{refKey,")
     }
 }
