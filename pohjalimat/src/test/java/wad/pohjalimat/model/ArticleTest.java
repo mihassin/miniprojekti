@@ -35,6 +35,12 @@ public class ArticleTest {
         assertEquals(b, a);
     }
 
+    @Test(expected=IllegalArgumentException.class)
+    public void improperCreate() {
+        Article.create("", "", "", "", -1001);
+    }
+
+
     /**
      * Test of getJournal method, of class Article.
      */
