@@ -139,7 +139,7 @@ public class Article extends Entry{
     public String toString() {
         String optionals = "";
 
-        if (number>=0) {
+        if (number>0) {
             optionals = optionals + "Number: " + number + "\n";
         }
         if (pages!=null) {
@@ -167,27 +167,27 @@ public class Article extends Entry{
         String optionals = "";
         
         if (number>=0) {
-            optionals = optionals + "number = " + number + ",\n";
+            optionals = optionals + ",\nnumber = " + number + ",\n";
         }
         if (pages!=null) {
             optionals = optionals + "pages = \"" + pages + "\",\n";
         }
-        if (monthNumeric<13 && monthNumeric>0) {
+        if (monthNumeric>0) {
             optionals = optionals + "month = " + monthNumeric + ",\n";
         }
         if (note!=null) {
             optionals = optionals + "note = \"" + note + "\",\n";
         }
         if (volume>0) {
-            optionals = optionals + "volume = " + volume + "\n";
+            optionals = optionals + "volume = " + volume + "";
         }
         
         String raakamuoto = "@ARTICLE{" + masterKey +",\n" +
                 "author = \"" + author + "\",\n"  +
                 "title = \"" + title + "\",\n"  +
                 "journal = \"" + journal + "\",\n"  +
-                "year = " + year + ",\n"  +
-                optionals + "}";
+                "year = " + year + ""  +
+                optionals + "\n}";
         
         String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
         String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
