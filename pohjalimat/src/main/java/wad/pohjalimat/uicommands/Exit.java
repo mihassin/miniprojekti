@@ -3,7 +3,9 @@ package wad.pohjalimat.uicommands;
 import wad.pohjalimat.io.IO;
 
 /**
- *
+ * System.exit() screws easyB tests up so the command is handled in the class
+ * TextUI for the time being.
+ * 
  * @author slime- eazy-e
  */
 public class Exit implements Command {

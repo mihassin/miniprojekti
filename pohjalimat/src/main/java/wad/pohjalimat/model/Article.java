@@ -167,26 +167,26 @@ public class Article extends Entry{
         String optionals = "";
         
         if (number>=0) {
-            optionals = optionals + ",\nnumber = " + number + ",\n";
+            optionals = optionals + ",\nnumber = \"" + number + "\",\n";
         }
         if (pages!=null) {
             optionals = optionals + "pages = \"" + pages + "\",\n";
         }
         if (monthNumeric>0) {
-            optionals = optionals + "month = " + monthNumeric + ",\n";
+            optionals = optionals + "month = \"" + monthNumeric + "\",\n";
         }
         if (note!=null) {
             optionals = optionals + "note = \"" + note + "\",\n";
         }
         if (volume>0) {
-            optionals = optionals + "volume = " + volume + "";
+            optionals = optionals + "volume = \"" + volume + "\"";
         }
         
         String raakamuoto = "@ARTICLE{" + masterKey +",\n" +
                 "author = \"" + author + "\",\n"  +
                 "title = \"" + title + "\",\n"  +
                 "journal = \"" + journal + "\",\n"  +
-                "year = " + year + ""  +
+                "year = \"" + year + "\"" +
                 optionals + "\n}";
         
         String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
