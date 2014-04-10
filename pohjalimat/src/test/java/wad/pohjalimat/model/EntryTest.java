@@ -11,53 +11,53 @@ public class EntryTest {
         e = new Article("a", "a", "a", "a", 1234);
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void editorToStringTest() {
         assertEquals("", e.EditorToString());
     }
     
     @Test
     public void volumeToStringTest() {
-        assertEquals("Volume: "+e.volume+ "\n", e.VolumeToString());
+        assertEquals("", e.VolumeToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void seriesToStringTest() {
         assertEquals("", e.SeriesToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void pagesToStringTest() {
         assertEquals("", e.PagesToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void addressToStringTest() {
         assertEquals("", e.AddressToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void monthToStringTest() {
         assertEquals("", e.MonthToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void publisherToStringTest() {
         assertEquals("", e.PublisherToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void organisationToStringTest() {
         assertEquals("", e.OrganisationToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void noteToStringTest() {
         assertEquals("", e.NoteToString());
     }
     
-    @Test(expected=NullPointerException.class)
+    @Test
     public void keyToStringTest() {
-        assertEquals("Key: "+ e.key+ "\n", e.KeyToString());
+        assertEquals("", e.KeyToString());
     }
 }
