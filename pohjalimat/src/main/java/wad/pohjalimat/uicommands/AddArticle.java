@@ -37,19 +37,31 @@ public class AddArticle implements Command{
                         io.read("journal: "),
                         Integer.parseInt(io.read("year: ")));
                 
-                io.write("Optional information(can be empty):");
-                a.setNumber(Integer.parseInt(io.read("Number: ")));
-                a.setPages(io.read("Pages: "));
-                a.setMonthNumeric(Integer.parseInt("Month (1-12): "));
-                a.setNote(io.read("Note: "));
-                a.setVolume(Integer.parseInt(io.read("Volume: ")));
+                io.write("Optional information (can be empty):");
+                
+                String apu=io.read("Number: ");
+                a.setNumber(apu.isEmpty() ? 0 : Integer.parseInt(apu));
+                
+                apu=io.read("Pages: ");
+                a.setPages(apu.isEmpty() ? null : apu);
+                
+                apu=io.read("Month (1-12): ");
+                a.setMonthNumeric(apu.isEmpty() ? 0 : Integer.parseInt(apu));
+                
+                apu=io.read("Note: ");
+                a.setNote(apu.isEmpty() ? null : apu);
+                
+                apu=io.read("Volume: ");
+                a.setVolume(apu.isEmpty() ? 0 : Integer.parseInt(apu));
+                
+                refList.add(a);
             } catch (NullPointerException e) {
                 io.write("");
                 io.write("Invalid entry");
             }
         } catch (NumberFormatException e) {
             io.write("");
-            io.write("Invalid entry");
+            io.write("Invalid nubmer entry");
         }
     }
 
