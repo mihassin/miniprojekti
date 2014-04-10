@@ -8,12 +8,13 @@ package wad.pohjalimat.model;
 
 /**
  *
- * @author jphelio@cs
+ * @author Juhani Heliö
  */
 public class Article extends Entry{
     
     private String journal;
     private int number;
+    private int monthNumeric;
 
     public static Article create(String masterKey, String author, String title, String journal, int year){
         if (masterKey.isEmpty() || author.isEmpty() || title.isEmpty() || journal.isEmpty() || year < -1000) {
@@ -21,6 +22,7 @@ public class Article extends Entry{
         }
         return new Article(masterKey, author, title, journal, year);
     }
+    
     
     public Article(String masterKey, String author, String title, String journal, int year){
         super.masterKey=masterKey;
@@ -80,6 +82,22 @@ public class Article extends Entry{
         this.month = month;
     }
 
+    public int getMonthNumeric() {
+        return monthNumeric;
+    }
+
+    public void setMonthNumeric(int monthNumeric) {
+        if(monthNumeric<=0){
+            this.monthNumeric=0;
+        }
+        else if(monthNumeric>12){
+            this.monthNumeric=12;
+        }
+        else{
+        this.monthNumeric = monthNumeric;
+        }
+    }
+
     public String getNote() {
         return note;
     }
@@ -88,12 +106,12 @@ public class Article extends Entry{
         this.note = note;
     }
 
-    public String getKey() {
-        return key;
+    public String getMasterKey() {
+        return masterKey;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setMasterKey(String masterKey) {
+        this.masterKey = masterKey;
     }
 
     public String getPages() {
@@ -104,32 +122,89 @@ public class Article extends Entry{
         this.pages = pages;
     }
 
-    public String getBooktitle() {
-        return booktitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setBooktitle(String booktitle) {
-        this.booktitle = booktitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
+    
+    
     
     
 //--Overridet-------------------------
     
     @Override
     public String toString() {
-        return null;
+        String optionals = "";
+
+        if (number>=0) {
+            optionals = optionals + "Number: " + number + "\n";
+        }
+        if (pages!=null) {
+            optionals = optionals + "Pages: " + pages + "\n";
+        }
+        if (month!=null) {
+            optionals = optionals + "Month: " + month + "\n";
+        }
+        if (note!=null) {
+            optionals = optionals + "Note: " + note + "\n";
+        }
+        if (volume>0) {
+            optionals = optionals + "Volume: " + volume + "\n";
+        }
+
+        return "*** " + title + " ***" + "\n"
+                + "Author: " + author + "\n"
+                + "Journal: " + journal + "\n"
+                + "Year published: " + year + "\n"
+                + optionals;
     }
 
     @Override
     public String showEntryInBibTeX() {
-        return null;
+        String optionals = "";
+        
+        if (number>=0) {
+            optionals = optionals + "number = " + number + ",\n";
+        }
+        if (pages!=null) {
+            optionals = optionals + "pages = \"" + pages + "\",\n";
+        }
+        if (monthNumeric<13 && monthNumeric>0) {
+            optionals = optionals + "month = " + monthNumeric + ",\n";
+        }
+        if (note!=null) {
+            optionals = optionals + "note = \"" + note + "\",\n";
+        }
+        if (volume>0) {
+            optionals = optionals + "volume = " + volume + "\n";
+        }
+        
+        String raakamuoto = "@ARTICLE{" + masterKey +",\n" +
+                "author = \"" + author + "\",\n"  +
+                "title = \"" + title + "\",\n"  +
+                "journal = \"" + journal + "\",\n"  +
+                "year = " + year + ",\n"  +
+                optionals + "}";
+        
+        String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
+        String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
+        String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
+        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{O}");
+        
+        return muunnosAjaB;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
+        hash = 43 * hash + (this.masterKey != null ? this.masterKey.hashCode() : 0);
+        hash = 43 * hash + (this.author != null ? this.author.hashCode() : 0);
+        hash = 43 * hash + (this.title != null ? this.title.hashCode() : 0);
         hash = 43 * hash + (this.journal != null ? this.journal.hashCode() : 0);
-        hash = 43 * hash + this.number;
+        hash = 43 * hash + this.year;
         return hash;
     }
 
@@ -142,10 +217,19 @@ public class Article extends Entry{
             return false;
         }
         final Article other = (Article) obj;
+        if ((this.masterKey == null) ? (other.masterKey != null) : !this.masterKey.equals(other.masterKey)) {
+            return false;
+        }
+        if ((this.author == null) ? (other.author != null) : !this.author.equals(other.author)) {
+            return false;
+        }
+        if ((this.title == null) ? (other.title != null) : !this.title.equals(other.title)) {
+            return false;
+        }
         if ((this.journal == null) ? (other.journal != null) : !this.journal.equals(other.journal)) {
             return false;
         }
-        if (this.number != other.number) {
+        if (this.year != other.year) {
             return false;
         }
         return true;
