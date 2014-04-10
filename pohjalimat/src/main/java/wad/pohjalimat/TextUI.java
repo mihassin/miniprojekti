@@ -20,8 +20,8 @@ public class TextUI {
     public void start() {
         while (true) {
             
-//            io.write("");
-//            io.write("Type 'help' for a list of available commands");
+            io.write("");
+            io.write("Type 'help' for a list of available commands");
 
             String command = io.read("> ");
             if (command.equals("exit")) {
