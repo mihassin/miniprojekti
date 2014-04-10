@@ -11,6 +11,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import wad.pohjalimat.io.*;
 import wad.pohjalimat.uicommands.CommandStash;
+import org.mockito.Mockito.*;
 
 /**
  *
