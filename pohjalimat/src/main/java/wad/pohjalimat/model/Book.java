@@ -33,7 +33,7 @@ public class Book extends Entry {
         return hash;
     }
 
-    @Override
+   
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -42,13 +42,13 @@ public class Book extends Entry {
             return false;
         }
         final Book other = (Book) obj;
-        if (this.author.equals(other.author)) {
+        if (!this.author.equals(other.author)) {
             return false;
         }
-        if (this.title.equals(other.title)) {
+        if (!this.title.equals(other.title)) {
             return false;
         }
-        if (this.publisher.equals(other.publisher)) {
+        if (!this.publisher.equals(other.publisher)) {
             return false;
         }
         if (this.year != other.year) {

@@ -60,4 +60,9 @@ public class EntryTest {
     public void keyToStringTest() {
         assertEquals("", e.KeyToString());
     }
+    
+    @Test
+    public void titleToStringTest() {
+        assertEquals("Title: a\n", e.TitleToString());
+    }
 }

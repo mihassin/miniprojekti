@@ -95,7 +95,6 @@ public class BookTest {
         assertEquals(newValue, book2.getYear());
     }
 
-    
     @Test
     public void getNSetVolume() {
         int newValue = 1;
@@ -179,11 +178,16 @@ public class BookTest {
     public void EqualFailsWithDiffClass() {
         assertFalse(book2.equals(new Inproceedings("a", "b", "c", "dsa", 3456)));
     }
-// fuck it
-//    @Test
-//    public void EqualSucceedsWithSameBooks() {
-//        assertTrue(book2.equals(book));
-//    }
+
+    @Test
+    public void EqualSucceedsWithSameBooks() {
+        assertTrue(book.equals(book));
+    }
+
+    @Test
+    public void EqualSucceedsWithKindaSameBooks() {
+        assertTrue(book2.equals(book));
+    }
 
     @Test
     public void hashCodeDiffForDiffBooks() {
