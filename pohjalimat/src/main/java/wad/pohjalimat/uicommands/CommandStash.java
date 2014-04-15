@@ -21,8 +21,6 @@ public class CommandStash {
         refList = new ArrayList<Entry>();
         
         commands.put("addentry", new Addentry(io, refList));
-        commands.put("addbook", new AddBook(io, refList));
-        commands.put("addarticle", new AddArticle(io, refList));
         commands.put("print", new Print(io, refList));
         commands.put("bibtex", new Bibtex(io, refList));
         commands.put("exit", new Exit(io));

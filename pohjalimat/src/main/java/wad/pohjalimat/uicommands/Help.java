@@ -18,9 +18,7 @@ public class Help implements Command {
     public void run() {
         io.write("");
         io.write("Available commands:");
-        io.write("addentry   - add an inproceedings BibTex entry");
-        io.write("addbook    - add a book BibTex entry");
-        io.write("addarticle - add a article BibTex entry");
+        io.write("addentry   - add a BibTex entry");
         io.write("print      - print a list of added content");
         io.write("bibtex     - print a list of added content in BibTex format");
         io.write("save       - save the added content in BibTex format to a .bib file");

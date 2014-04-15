@@ -8,7 +8,7 @@ description 'Käyttäjänä pystyn lisäämään Article-tyyppisen viitteen selk
 
 scenario "käyttäjä voi lisätä viitteen ohjelmaan selkokielisillä tiedoilla", {
     given 'komento addarticle valittu', {
-        io = new StubIO("addarticle", "refKey", "ransum", "Master's thesis", "sinep", "2015", "12", "1-20", "5", "korvakatu 1", "2", "exit")
+        io = new StubIO("addentry", "article", "refKey", "ransum", "Master's thesis", "sinep", "2015", "12", "1-20", "5", "korvakatu 1", "2", "exit")
          textui = new TextUI(io)
     }
     when 'oikean muotoiset viitteen tiedot syötetään', {
