@@ -46,6 +46,10 @@ public abstract class Entry {
         return (isNotNullOrEmpty(editor)) ? "Editor: " + editor + "\n" : "";
     }
 
+    protected String BookTitleToString() {
+        return (isNotNullOrEmpty(booktitle)) ? "Book title: " + booktitle + "\n" : "";
+    }
+
     protected String VolumeToString() {
         return (volume > 0) ? "Volume: " + volume + "\n" : "";
     }
@@ -98,6 +102,66 @@ public abstract class Entry {
         return (isNotNullOrEmpty(edition)) ? "Edition: " + edition + "\n" : "";
     }
 
+    // BibtexStrings
+    protected String authorToBibTeX() {
+        return (isNotNullOrEmpty(author)) ? "author = \"" + author + "\",\n" : "";
+    }
+
+    protected String titleToBibTeX() {
+        return (isNotNullOrEmpty(title)) ? "title = \"" + title + "\",\n" : "";
+    }
+
+    protected String booktitleToBibTeX() {
+        return (isNotNullOrEmpty(booktitle)) ? "booktitle = \"" + booktitle + "\",\n" : "";
+    }
+
+    protected String yearToBibTeX() {
+        return "year = \"" + year + "\",\n";
+    }
+
+    protected String editorToBibTeX() {
+        return (isNotNullOrEmpty(editor)) ? "editor = \"" + editor + "\",\n" : "";
+    }
+
+    protected String volumeToBibTeX() {
+        if (volume > 0) {
+            return "volume = \"" + volume + "\",\n";
+        }
+        return "";
+    }
+
+    protected String seriesToBibTeX() {
+        return (isNotNullOrEmpty(series)) ? "series = \"" + series + "\",\n" : "";
+    }
+
+    protected String pagesToBibTeX() {
+        return (isNotNullOrEmpty(pages)) ? "pages = \"" + pages + "\",\n" : "";
+    }
+
+    protected String addressToBibTeX() {
+        return (isNotNullOrEmpty(address)) ? "address = \"" + address + "\",\n" : "";
+    }
+
+    protected String monthToBibTeX() {
+        return (isNotNullOrEmpty(month)) ? "month = \"" + month + "\",\n" : "";
+    }
+
+    protected String publisherToBibTeX() {
+        return (isNotNullOrEmpty(publisher)) ? "publisher = \"" + publisher + "\",\n" : "";
+    }
+
+    protected String organisationToBibTeX() {
+        return (isNotNullOrEmpty(organisation)) ? "organisation = \"" + organisation + "\",\n" : "";
+    }
+
+    protected String noteToBibTeX() {
+        return (isNotNullOrEmpty(note)) ? "note = \"" + note + "\",\n" : "";
+    }
+
+    protected String keyToBibTeX() {
+        return (isNotNullOrEmpty(key)) ? "key = \"" + key + "\",\n" : "";
+    }
+
     public String getMasterKey() {
         return masterKey;
     }
@@ -105,7 +169,7 @@ public abstract class Entry {
     private boolean isNotNullOrEmpty(String value) {
         return value != null && !value.isEmpty();
     }
-    
+
     // Enter setters & getters
     public String getJournal() {
         return journal;
@@ -122,8 +186,6 @@ public abstract class Entry {
     public void setNumber(int number) {
         this.number = number;
     }
-    
-    
 
     public void setMasterKey(String masterKey) {
         this.masterKey = masterKey;

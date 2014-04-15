@@ -239,7 +239,7 @@ public class InproceedingsTest {
     public void testToString() {
         String testString = "*** Muistio ***\nAuthor: Pena\n"
                 + "Book title: Penan muistio\n"
-                + "Year published: 2000\n";
+                + "Year: 2000\n";
 
         assertEquals(testString, ip.toString());
     }
@@ -248,7 +248,7 @@ public class InproceedingsTest {
     public void testLongToString() {
         String testString = "*** El Giganto ***\nAuthor: Senor Gigante\n"
                 + "Book title: Suuri mies hän on\n"
-                + "Year published: 2014\n"
+                + "Year: 2014\n"
                 + "Editor: testeditor\n"
                 + "Volume: 9999\n"
                 + "Series: testseries\n"
