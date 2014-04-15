@@ -1,5 +1,7 @@
 package wad.pohjalimat.model;
 
+import wad.pohjalimat.util.aakkosetToBibTeX;
+
 /**
  *
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
@@ -92,11 +94,6 @@ public class Inproceedings extends Entry {
                 + noteToBibTeX()
                 + keyToBibTeX() + "}";
 
-        String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
-        String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
-        String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
-        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{O}");
-
-        return muunnosAjaB;
+        return new aakkosetToBibTeX(raakamuoto).convert();
     }
 }

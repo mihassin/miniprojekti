@@ -225,7 +225,7 @@ public class BookTest {
                 + "author = \"Make\",\n"
                 + "title = \"IP conffaus\",\n"
                 + "publisher = \"Unigrafia\",\n"
-                + "year = 2014,\n}";
+                + "year = \"2014\",\n}";
     }
 
     @Test
@@ -234,9 +234,9 @@ public class BookTest {
                 + "author = \"Make\",\n"
                 + "title = \"IP conffaus\",\n"
                 + "publisher = \"Unigrafia\",\n"
-                + "year = 2014,\n"
-                + "volume = 2,\n"
-                + "month = null,\n"
+                + "year = \"2014\",\n"
+                + "volume = \"2\",\n"
+                + "month = \"aa\",\n"
                 + "isbn = \"IIISBN\",\n"
                 + "}";
         book2.setMonth("aa");

@@ -3,116 +3,81 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package wad.pohjalimat.model;
+
+import wad.pohjalimat.util.aakkosetToBibTeX;
 
 /**
  *
  * @author Juhani Heliö
  */
-public class Article extends Entry{
-   
+public class Article extends Entry {
+
     private int monthNumeric;
 
-    public static Article create(String masterKey, String author, String title, String journal, int year){
+    public static Article create(String masterKey, String author, String title, String journal, int year) {
         if (masterKey.isEmpty() || author.isEmpty() || title.isEmpty() || journal.isEmpty() || year < -1000) {
             throw new IllegalArgumentException();
         }
         return new Article(masterKey, author, title, journal, year);
     }
-    
-    
-    public Article(String masterKey, String author, String title, String journal, int year){
-        super.masterKey=masterKey;
-        super.author=author;
-        super.title=title;
-        this.journal=journal;
-        super.year=year;
-    }
-    
-//--Getterit ja setterit----------------
-   
 
+    public Article(String masterKey, String author, String title, String journal, int year) {
+        super.masterKey = masterKey;
+        super.author = author;
+        super.title = title;
+        this.journal = journal;
+        super.year = year;
+    }
+
+//--Getterit ja setterit----------------
     public void setMonthNumeric(int monthNumeric) {
-        if(monthNumeric<=0){
-            this.monthNumeric=0;
-        }
-        else if(monthNumeric>12){
-            this.monthNumeric=12;
-        }
-        else{
-        this.monthNumeric = monthNumeric;
+        if (monthNumeric <= 0) {
+            this.month = "" + 0;
+        } else if (monthNumeric > 12) {
+            this.month = "" + 12;
+        } else {
+            this.month = "" + monthNumeric;
         }
     }
 
     public int getMonthNumeric() {
-        return monthNumeric;
+        int month = 0;
+        try {
+            month = Integer.parseInt(this.month);
+        } catch (Exception e) {
+        }
+        return month;
     }
-    
 
-    
 //--Overridet-------------------------
-    
     @Override
     public String toString() {
-        String optionals = "";
-
-        if (number>0) {
-            optionals = optionals + "Number: " + number + "\n";
-        }
-        if (pages!=null) {
-            optionals = optionals + "Pages: " + pages + "\n";
-        }
-        if (month!=null) {
-            optionals = optionals + "Month: " + month + "\n";
-        }
-        if (note!=null) {
-            optionals = optionals + "Note: " + note + "\n";
-        }
-        if (volume>0) {
-            optionals = optionals + "Volume: " + volume + "\n";
-        }
-
         return "*** " + title + " ***" + "\n"
-                + "Author: " + author + "\n"
-                + "Journal: " + journal + "\n"
-                + "Year published: " + year + "\n"
-                + optionals;
+                + AuthorToString()
+                + JournalToString()
+                + YearToString()
+                + NumberToString()
+                + PagesToString()
+                + MonthToString()
+                + NoteToString()
+                + VolumeToString();
     }
 
     @Override
     public String showEntryInBibTeX() {
-        String optionals = "";
-        
-        if (number>=0) {
-            optionals = optionals + ",\nnumber = \"" + number + "\",\n";
-        }
-        if (pages!=null) {
-            optionals = optionals + "pages = \"" + pages + "\",\n";
-        }
-        if (monthNumeric>0) {
-            optionals = optionals + "month = \"" + monthNumeric + "\",\n";
-        }
-        if (note!=null) {
-            optionals = optionals + "note = \"" + note + "\",\n";
-        }
-        if (volume>0) {
-            optionals = optionals + "volume = \"" + volume + "\"";
-        }
-        
-        String raakamuoto = "@ARTICLE{" + masterKey +",\n" +
-                "author = \"" + author + "\",\n"  +
-                "title = \"" + title + "\",\n"  +
-                "journal = \"" + journal + "\",\n"  +
-                "year = \"" + year + "\"" +
-                optionals + "\n}";
-        
-        String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
-        String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
-        String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
-        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{O}");
-        
-        return muunnosAjaB;
+        String raakamuoto = "@ARTICLE{" + masterKey + ",\n"
+                + authorToBibTeX()
+                + titleToBibTeX()
+                + journalToBibTeX()
+                + yearToBibTeX()
+                + numberToBibTeX()
+                + pagesToBibTeX()
+                + monthToBibTeX()
+                + noteToBibTeX()
+                + volumeToBibTeX() + "}";
+
+        return new aakkosetToBibTeX(raakamuoto).convert();
     }
 
     @Override

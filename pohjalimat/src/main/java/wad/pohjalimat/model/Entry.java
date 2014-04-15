@@ -74,6 +74,14 @@ public abstract class Entry {
         return (isNotNullOrEmpty(publisher)) ? "Publisher: " + publisher + "\n" : "";
     }
 
+    protected String JournalToString() {
+        return (isNotNullOrEmpty(journal)) ? "Journal: " + journal + "\n" : "";
+    }
+
+    protected String NumberToString() {
+        return (number > 0) ? "Number: " + number + "\n" : "";
+    }
+
     protected String OrganisationToString() {
         return (isNotNullOrEmpty(organisation)) ? "Organisation: " + organisation + "\n" : "";
     }
@@ -105,6 +113,18 @@ public abstract class Entry {
     // BibtexStrings
     protected String authorToBibTeX() {
         return (isNotNullOrEmpty(author)) ? "author = \"" + author + "\",\n" : "";
+    }
+
+    protected String editionToBibTeX() {
+        return (isNotNullOrEmpty(edition)) ? "edition = \"" + edition + "\",\n" : "";
+    }
+
+    protected String journalToBibTeX() {
+        return (isNotNullOrEmpty(journal)) ? "journal = \"" + journal + "\",\n" : "";
+    }
+
+    protected String numberToBibTeX() {
+        return (number > 0) ? "number = \"" + number + "\",\n" : "";
     }
 
     protected String titleToBibTeX() {
@@ -159,7 +179,7 @@ public abstract class Entry {
     }
 
     protected String keyToBibTeX() {
-        return (isNotNullOrEmpty(key)) ? "key = \"" + key + "\",\n" : "";
+        return (isNotNullOrEmpty(key)) ? "isbn = \"" + key + "\",\n" : "";
     }
 
     public String getMasterKey() {

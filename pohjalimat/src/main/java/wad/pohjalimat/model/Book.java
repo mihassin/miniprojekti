@@ -1,5 +1,7 @@
 package wad.pohjalimat.model;
 
+import wad.pohjalimat.util.aakkosetToBibTeX;
+
 /**
  *
  * @author Lauri Kangassalo / lauri.kangassalo@helsinki.fi
@@ -20,10 +22,8 @@ public class Book extends Entry {
         super.publisher = publisher;
         super.year = year;
     }
-    
-    
-    
-   @Override
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 41 * hash + (this.author != null ? this.author.hashCode() : 0);
@@ -56,6 +56,7 @@ public class Book extends Entry {
         }
         return true;
     }
+
     @Override
     public String toString() {
         return "*** " + title + " ***\n"
@@ -68,58 +69,25 @@ public class Book extends Entry {
                 + EditionToString()
                 + MonthToString()
                 + NoteToString()
-                + KeyToString(); 
+                + KeyToString();
     }
-    
+
     // volume/number, series, address, edition, month, note, key
+    @Override
+    public String showEntryInBibTeX() {       
+        String raakamuoto = "@BOOK{" + masterKey + ",\n"
+                + authorToBibTeX()
+                + titleToBibTeX()
+                + publisherToBibTeX()
+                + yearToBibTeX()
+                + volumeToBibTeX()
+                + seriesToBibTeX()
+                + addressToBibTeX() 
+                + editionToBibTeX() 
+                + monthToBibTeX()
+                + noteToBibTeX() 
+                + keyToBibTeX() + "}";
 
-   @Override
-   public String showEntryInBibTeX() {
-               String optionals = "";
-        
-        if (volume>0) {
-            optionals = optionals + "volume = " + volume + ",\n";
-        }
-        if (series!=null && !series.isEmpty()) {
-            optionals = optionals + "series = \"" + series + "\",\n";
-        }
-        if (address!=null && !address.isEmpty()) {
-            optionals = optionals + "address = \"" + address + "\",\n";
-        }
-        if(edition!=null && !edition.isEmpty()) {
-            optionals = optionals + "edition = \"" + edition + "\",\n";
-        }
-        if(month!=null && !month.isEmpty()) {
-            optionals = optionals + "month = " + address + ",\n";
-        }
-        
-        
-        if (note!=null && !note.isEmpty()) {
-            optionals = optionals + "note = \"" + note + "\",\n";
-        }
-        
-        if (key!=null && !key.isEmpty()) {
-            optionals = optionals + "isbn = \"" + key + "\",\n";
-        }
-        String raakamuoto = "@BOOK{" + masterKey +",\n" +
-                "author = \"" + author + "\",\n"  +
-                "title = \"" + title + "\",\n"  +
-                "publisher = \"" + publisher + "\",\n"  +
-                "year = " + year + ",\n"  +
-                optionals + "}";
-        
-        String amuunnos = raakamuoto.replace("ä", "\\\"{a}");
-        String ajaomuunnos = amuunnos.replace("ö", "\\\"{o}");
-        String muunnosA = ajaomuunnos.replace("Ä", "\\\"{A}");
-        String muunnosAjaB = muunnosA.replace("Ö", "\\\"{O}");
-        
-        return muunnosAjaB;
-   }
-   
-    
-    
-    
-    
-    
-
+        return new aakkosetToBibTeX(raakamuoto).convert();
+    }
 }

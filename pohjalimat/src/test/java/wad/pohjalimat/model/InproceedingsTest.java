@@ -291,7 +291,7 @@ public class InproceedingsTest {
                 + "publisher = \"testpublisher\",\n"
                 + "organisation = \"testorganisation\",\n"
                 + "note = \"testnote\",\n"
-                + "key = \"testkey\",\n"
+                + "isbn = \"testkey\",\n"
                 + "}";
 
         assertEquals(testString, elGiganto.showEntryInBibTeX());
