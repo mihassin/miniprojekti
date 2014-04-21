@@ -87,7 +87,7 @@ public class DefaultControllerTest {
      */
     @Test
     public void testHandleDefault() {
-        String expResult = "entries";
+        String expResult = "prompt";
         String result = instance.handleDefault();
         assertEquals(expResult, result);
     }

@@ -1,5 +1,7 @@
 package wad.pohjalimat;
 
+
+
 import java.util.Scanner;
 import wad.pohjalimat.io.ConsoleIO;
 import wad.pohjalimat.model.Book;

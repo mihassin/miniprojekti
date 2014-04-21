@@ -8,7 +8,7 @@ public class DefaultController {
     
     @RequestMapping("*")
     public String handleDefault() {
-        return "entries";
+        return "prompt";
     }
 }
 
