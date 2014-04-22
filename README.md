@@ -1,5 +1,7 @@
 100% Java
 =========
+- pom.xml:ssä yks kommentoitu lohko voi null jarrin
+
 irc: #ohtu2014limat
 
 backlogit:
