@@ -10,5 +10,6 @@ https://docs.google.com/spreadsheet/ccc?key=0AqogwfYeUFLTdHVFZ3d1ckRGazhGcExaeTh
 - Viimeisimmän toimivan buildin .jar:
 http://ohtu.jamo.io/view/miniprojektit/job/pohjalimat-miniprojekti/lastSuccessfulBuild/artifact/pohjalimat/target/pohjalimat-1.0-SNAPSHOT.jar
 
-- heroku: 
-TODO
+- heroku: TODO
+
+- yksi kommentoitu lohko pom.xml:ssä voi nullaa jarrin 
