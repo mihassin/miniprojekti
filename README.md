@@ -1,7 +1,6 @@
 100% Java
 =========
-- irc: 
-#ohtu2014limat
+- irc: #ohtu2014limat
 
 - backlogit:
 https://docs.google.com/spreadsheet/ccc?key=0AqogwfYeUFLTdHVFZ3d1ckRGazhGcExaeThZZkhRT0E&usp=sharing
