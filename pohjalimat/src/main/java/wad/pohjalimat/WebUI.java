@@ -3,16 +3,16 @@ package wad.pohjalimat;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import wad.pohjalimat.io.WebIO;
-import wad.pohjalimat.uicommands.CommandStash;
+import wad.pohjalimat.webcommands.WebCommands;
 
 @Service
 public class WebUI {
     WebIO io;
-    CommandStash commands;
+    WebCommands commands;
     
     public WebUI() {
         io = new WebIO();
-        commands = new CommandStash(io);
+        commands = new WebCommands(io);
         io.write("Type 'help' for a list of available commands");
     }
     
