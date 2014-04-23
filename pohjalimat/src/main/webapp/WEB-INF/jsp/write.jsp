@@ -28,17 +28,9 @@
   <body onload="setFocus()">
 
     <div>
-      <c:choose>
-        <c:when test="${empty messages}">
-          <span>Start by typing a command below. 'help' shows available commands.</span>
-        </c:when>
-
-        <c:otherwise>
-          <c:forEach var="message" items="${messages}">
-          <p>${message}</p>
-          </c:forEach>
-        </c:otherwise>
-      </c:choose>
+        <c:forEach var="message" items="${messages}">
+            <p>${message}</p>
+        </c:forEach>
 
       <form action="${pageContext.request.contextPath}/app/read" method="POST">
         <input type="submit" value=">" />
