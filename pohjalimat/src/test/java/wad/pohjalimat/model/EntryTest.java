@@ -6,9 +6,11 @@ import static org.junit.Assert.*;
 public class EntryTest {
     
     Entry e;
+    Entry dummy;
     
     public EntryTest() {
         e = new Article("a", "a", "a", "a", 1234);
+        dummy = new EntryDummy();
     }
     
     @Test
@@ -65,4 +67,36 @@ public class EntryTest {
     public void titleToStringTest() {
         assertEquals("Title: a\n", e.TitleToString());
     }
+    
+    @Test
+    public void getNSetCategoryTest() {
+        assertNull(dummy.getCategory());
+        dummy.setCategory("kirja");
+        assertEquals("kirja", dummy.getCategory());
+    }
 }
+
+class EntryDummy extends Entry {
+
+    @Override
+    public String toString() {
+        return "";
+    }
+
+    @Override
+    public String showEntryInBibTeX() {
+        return "";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+    
+}
+

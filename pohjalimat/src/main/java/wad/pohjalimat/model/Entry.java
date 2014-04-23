@@ -27,6 +27,7 @@ public abstract class Entry {
     protected String editor;
     protected String journal;
     protected int number;
+    protected String category;
 
     public Entry() {
     }
@@ -41,6 +42,14 @@ public abstract class Entry {
 
     @Override
     public abstract int hashCode();
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     protected String EditorToString() {
         return (isNotNullOrEmpty(editor)) ? "Editor: " + editor + "\n" : "";
