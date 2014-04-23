@@ -75,4 +75,13 @@ public class SearchTest {
         assertTrue(testIO.getOutput().contains("Illegal category number"));
     }
     
+    @Test
+    public void UserFailsInNumberEntry3() {
+        testInproceedings.setCategory("inprokategoria");
+        testIO = new StubIO("-5");
+        testSearch = new Search(testIO, testRefList);
+        testSearch.run();
+        assertTrue(testIO.getOutput().contains("Illegal category number"));
+    }
+    
 }

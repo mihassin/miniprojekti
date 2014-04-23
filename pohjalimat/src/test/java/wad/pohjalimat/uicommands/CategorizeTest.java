@@ -61,4 +61,12 @@ public class CategorizeTest {
         assertTrue(testIO.getOutput().contains("Illegal entry number"));
     }
     
+    @Test
+    public void idiotUserFailsInNumberEntry3() {
+        testIO = new StubIO("-7");
+        testCategorize = new Categorize(testIO, testRefList);
+        testCategorize.run();
+        assertTrue(testIO.getOutput().contains("Illegal entry number"));
+    }
+    
 }
