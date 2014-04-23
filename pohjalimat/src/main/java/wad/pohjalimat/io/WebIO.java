@@ -12,7 +12,7 @@ public class WebIO implements IO{
     
     @Override
     public String read(String label) {
-        messages.add(label);
+        messages.add(label); // webio tarvitsee jonkinlaisen toimivan read ratkaisun.
         return label;
     }
     
@@ -25,4 +25,7 @@ public class WebIO implements IO{
         return messages;
     }
     
+    public void clear() {
+        messages.clear();
+    }
 }
