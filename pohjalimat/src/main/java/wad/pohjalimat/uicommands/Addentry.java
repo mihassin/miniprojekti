@@ -54,19 +54,19 @@ public class Addentry implements Command {
 
                 io.write("Optional information (can be empty):");
 
-                String apu = io.read("Number: ");
+                String apu = io.read("(Number) Number: ");
                 a.setNumber(apu.isEmpty() ? 0 : Integer.parseInt(apu));
 
                 apu = io.read("Pages: ");
                 a.setPages(apu.isEmpty() ? null : apu);
 
-                apu = io.read("Month (1-12): ");
+                apu = io.read("(Number) Month (1-12): ");
                 a.setMonthNumeric(apu.isEmpty() ? 0 : Integer.parseInt(apu));
 
                 apu = io.read("Note: ");
                 a.setNote(apu.isEmpty() ? null : apu);
 
-                apu = io.read("Volume: ");
+                apu = io.read("(Number) Volume: ");
                 a.setVolume(apu.isEmpty() ? 0 : Integer.parseInt(apu));
 
                 refList.add(a);
@@ -93,7 +93,7 @@ public class Addentry implements Command {
 
                 // volume/number, series, address, edition, month, note, key
                 io.write("Optional information(can be empty):");
-                String vol = io.read("Volume: ");
+                String vol = io.read("(Number) Volume: ");
                 if (!vol.isEmpty()) {
                     b.setVolume(Integer.parseInt(vol));
                 }
