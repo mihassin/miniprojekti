@@ -26,7 +26,7 @@ public class WebCommands {
         commands = new HashMap<String, Command>();
         refList = new ArrayList<Entry>();
         
-        //commands.put("addentry", new Addentry(io, refList));
+        commands.put("addentry", new Addentry(io, refList));
         //commands.put("categorize", new Categorize(io, refList));
         //commands.put("search", new Search(io, refList));
         commands.put("print", new Print(io, refList));
