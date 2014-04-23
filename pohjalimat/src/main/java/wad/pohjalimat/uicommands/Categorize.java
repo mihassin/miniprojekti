@@ -26,6 +26,7 @@ public class Categorize implements Command {
                 int entryNo = Integer.parseInt(io.read("> "));
 
                 if (entryNo < 1 || entryNo > refList.size()) {
+                    io.write("");
                     io.write("Illegal entry number");
                 } else {
                     io.write("Enter category title");

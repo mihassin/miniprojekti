@@ -45,4 +45,20 @@ public class CategorizeTest {
         assertTrue(testIO.getOutput().contains("There are no entries!"));
     }
     
+    @Test
+    public void idiotUserFailsInNumberEntry() {
+        testIO = new StubIO("noob");
+        testCategorize = new Categorize(testIO, testRefList);
+        testCategorize.run();
+        assertTrue(testIO.getOutput().contains("Invalid number entry"));
+    }
+    
+    @Test
+    public void idiotUserFailsInNumberEntry2() {
+        testIO = new StubIO("6");
+        testCategorize = new Categorize(testIO, testRefList);
+        testCategorize.run();
+        assertTrue(testIO.getOutput().contains("Illegal entry number"));
+    }
+    
 }

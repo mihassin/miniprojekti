@@ -27,6 +27,7 @@ public class Search implements Command {
                 io.write("Select category number [1-" + catList.size() + "]");
                 int catNo = Integer.parseInt(io.read("> "));
                 if (catNo < 1 || catNo > catList.size()) {
+                    io.write("");
                     io.write("Illegal category number");
                 } else {
                     listEntriesWithCategory(catList.get(catNo - 1));
@@ -63,11 +64,13 @@ public class Search implements Command {
         io.write("");
         io.write("Entries of category <" + category + ">:");
         for (Entry e : refList) {
-            if (e.getCategory().equals(category)) {
-                io.write("");
-                io.write("Key: " + e.getMasterKey());
-                io.write("Author: " + e.getAuthor());
-                io.write("Title: " + e.getTitle());
+            if (e.getCategory() != null) {
+                if (e.getCategory().equals(category)) {
+                    io.write("");
+                    io.write("Key: " + e.getMasterKey());
+                    io.write("Author: " + e.getAuthor());
+                    io.write("Title: " + e.getTitle());
+                }
             }
         }
     }
